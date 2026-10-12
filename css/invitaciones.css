@@ -170,7 +170,32 @@ em{font-style:italic;color:inherit}
 .demos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 .demo{display:flex;flex-direction:column;align-items:center;gap:18px}
 .demo__phone{width:min(170px,100%);aspect-ratio:9/18;background:var(--forest);border-radius:28px;padding:7px;box-shadow:0 18px 40px rgba(47,58,51,.2)}
-.demo__phone span{display:block;height:100%;border-radius:22px;background:linear-gradient(160deg,var(--ivory),#e4ebdc 60%,var(--sage))}
+.demo__phone>span{display:block;height:100%;border-radius:22px;background:linear-gradient(160deg,var(--ivory),#e4ebdc 60%,var(--sage))}
+.demo{position:relative}
+.demo__badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);z-index:3;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;background:var(--white);border:1px solid var(--line);box-shadow:0 6px 16px rgba(47,58,51,.15);padding:5px 12px;border-radius:30px;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--forest)}
+.demo__badge i{width:8px;height:8px;border-radius:50%;background:#d4577a;animation:live 1.6s ease-in-out infinite}
+.demo__phone--live{display:block;transition:transform .4s ease,box-shadow .4s ease;animation:floaty 5s ease-in-out infinite}
+.demo__phone--live:hover{transform:translateY(-8px) scale(1.03);box-shadow:0 28px 54px rgba(20,28,63,.38);animation-play-state:paused}
+.xv{--navy:#141c3f;position:relative;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:1.1em;font-size:10px;background:radial-gradient(ellipse at 50% 30%,#1d2858 0%,var(--navy) 70%)!important;overflow:hidden;color:#fff;text-align:center}
+.xv__kicker{font-size:.8em;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.xv__env{position:relative;display:block;width:80%;aspect-ratio:1.45;background:#1e2759;border-radius:3px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.4);animation:nudge 3s ease-in-out infinite}
+.xv__env i{position:absolute;inset:0;display:block}
+.xv__liner{background:repeating-linear-gradient(0deg,transparent 0 5px,rgba(47,58,110,.35) 5px 6px),repeating-linear-gradient(90deg,#e7eaf3 0 5px,#b8bfd6 5px 6px);clip-path:polygon(0 0,100% 0,50% 60%)}
+.xv__l{background:#27316b;clip-path:polygon(0 0,52% 58%,0 100%)}
+.xv__r{background:#222c63;clip-path:polygon(100% 0,48% 58%,100% 100%)}
+.xv__b{background:#1a2250;clip-path:polygon(0 100%,50% 46%,100% 100%)}
+.xv__seal{position:absolute;left:50%;top:56%;width:30%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#fbdbe6,#eab2c7);color:#1a2250;display:grid;place-items:center;font:700 1.9em/1 var(--serif);font-style:normal;box-shadow:0 3px 8px rgba(0,0,0,.35)}
+.xv__name{font-family:'Pinyon Script','Playfair Display',cursive;font-size:3em;line-height:1;color:#f4bfd0}
+.xv__tap{font-size:.78em;letter-spacing:.26em;text-transform:uppercase;animation:tap 2s ease-in-out infinite}
+.xv__star{position:absolute;color:#f4bfd0;font-weight:400;animation:twinkle 3s ease-in-out infinite}
+.xv__star--1{top:10%;left:14%;font-size:1.1em}
+.xv__star--2{top:18%;right:12%;font-size:1.5em;animation-delay:1s}
+.xv__star--3{bottom:12%;left:18%;font-size:1.3em;animation-delay:2s}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.1)}}
+@keyframes tap{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes nudge{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes live{0%,100%{box-shadow:0 0 0 0 rgba(212,87,122,.5)}50%{box-shadow:0 0 0 6px rgba(212,87,122,0)}}
 .demo__link{display:flex;flex-direction:column;align-items:center;text-align:center;font-size:.92rem;line-height:1.4;padding:10px 22px;border:1.5px solid var(--forest);border-radius:18px;min-width:150px;transition:var(--ease)}
 .demo__link:hover{background:var(--forest);color:var(--ivory)}
 .demo__link b{font-weight:700}
@@ -251,4 +276,5 @@ em{font-style:italic;color:inherit}
   html{scroll-behavior:auto}
   .js .reveal{opacity:1;transform:none;transition:none}
   .countdown,.hero__logo{transition:none}
+  .demo__phone--live,.xv__env,.xv__tap,.xv__star,.demo__badge i{animation:none}
 }
