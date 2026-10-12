@@ -50,35 +50,41 @@
     })(performance.now());
   }
 
-  /* Paquetes: puntos del slider en móvil */
-  var track = document.querySelector('.packages');
-  var dots = document.getElementById('pkg-dots');
-  var cards = track.querySelectorAll('.pkg');
-  cards.forEach(function (card, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', 'Ver paquete ' + card.querySelector('.pkg__name').textContent);
-    b.addEventListener('click', function () {
-      track.scrollTo({ left: card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+  /* Sliders en móvil (paquetes y demos): puntos de navegación */
+  function initSlider(track, dots, itemSel, labelFn, startIndex) {
+    var cards = track.querySelectorAll(itemSel);
+    function centerOn(card, smooth) {
+      track.scrollTo({ left: card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2, behavior: smooth && !reduce ? 'smooth' : 'auto' });
+    }
+    cards.forEach(function (card) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', labelFn(card));
+      b.addEventListener('click', function () { centerOn(card, true); });
+      dots.appendChild(b);
     });
-    dots.appendChild(b);
-  });
-  function syncDots() {
-    var mid = track.scrollLeft + track.clientWidth / 2, best = 0, bd = Infinity;
-    cards.forEach(function (card, i) {
-      var d = Math.abs(card.offsetLeft + card.offsetWidth / 2 - mid);
-      if (d < bd) { bd = d; best = i; }
-    });
-    dots.querySelectorAll('button').forEach(function (b, i) { b.classList.toggle('is-active', i === best); });
+    function sync() {
+      var mid = track.scrollLeft + track.clientWidth / 2, best = 0, bd = Infinity;
+      cards.forEach(function (card, i) {
+        var d = Math.abs(card.offsetLeft + card.offsetWidth / 2 - mid);
+        if (d < bd) { bd = d; best = i; }
+      });
+      dots.querySelectorAll('button').forEach(function (b, i) { b.classList.toggle('is-active', i === best); });
+    }
+    var ticking = false;
+    track.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { sync(); ticking = false; });
+    }, { passive: true });
+    window.addEventListener('resize', sync);
+    if (startIndex && window.matchMedia('(max-width: 820px)').matches) centerOn(cards[startIndex], false);
+    sync();
   }
-  var ticking = false;
-  track.addEventListener('scroll', function () {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () { syncDots(); ticking = false; });
-  }, { passive: true });
-  window.addEventListener('resize', syncDots);
-  syncDots();
+  initSlider(document.querySelector('.packages'), document.getElementById('pkg-dots'), '.pkg',
+    function (c) { return 'Ver paquete ' + c.querySelector('.pkg__name').textContent; });
+  initSlider(document.querySelector('.demos'), document.getElementById('demo-dots'), '.demo',
+    function (c) { return 'Ver demo ' + c.querySelector('.demo__link b').textContent; }, 2);
 
   /* Comparativa de paquetes */
   var btn = document.getElementById('compare-btn');

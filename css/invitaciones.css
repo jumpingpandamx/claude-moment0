@@ -261,6 +261,12 @@ em{font-style:italic;color:inherit}
   .packages{overflow-y:hidden;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
   .pkg{flex:0 0 min(84%,340px);scroll-snap-align:center;transform:none;opacity:1;transition:none}
   .pkg--featured{transform:none;box-shadow:none}
+  .demos{position:relative;display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -24px;padding:30px 24px 8px;scroll-padding:0 24px}
+  .demos::-webkit-scrollbar{display:none}
+  .demo{flex:0 0 min(60%,230px);scroll-snap-align:center;transition:none;opacity:1;transform:none}
+  .demo__phone{width:100%}
+  .pkg-dots.demo-dots button{background:rgba(47,58,51,.22)}
+  .pkg-dots.demo-dots button.is-active{background:var(--forest)}
   .pkg-dots{display:flex;justify-content:center;gap:10px;margin-top:20px}
   .pkg-dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(246,243,236,.3);cursor:pointer;transition:var(--ease)}
   .pkg-dots button.is-active{background:var(--sand);width:26px;border-radius:6px}
