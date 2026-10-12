@@ -99,13 +99,18 @@ em{font-style:italic;color:inherit}
 .inv__names{font-family:var(--serif);font-size:2rem;line-height:1.1}
 .inv__names span{color:var(--sand);font-style:italic}
 .inv__date{font-size:.72rem;color:var(--muted);margin-bottom:6px}
-.inv__count{display:flex;gap:8px;margin-bottom:6px}
-.inv__count div{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:8px 10px;min-width:56px}
-.inv__count b{display:block;font-family:var(--serif);font-size:1.25rem;line-height:1.1}
+.inv__count{display:flex;gap:6px;margin-bottom:6px}
+.inv__count div{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:8px 6px;min-width:46px}
+.inv__count b{display:block;font-family:var(--serif);font-size:1.2rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.inv__count b.tick{animation:tick .45s ease}
+@keyframes tick{0%{transform:translateY(-35%);opacity:.2}100%{transform:none;opacity:1}}
 .inv__count small{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .inv__row{width:100%;background:var(--white);border-radius:10px;padding:9px 12px;font-size:.74rem;text-align:left;border:1px solid var(--line)}
 .inv__row i{color:var(--sage);margin-right:8px;width:14px}
-.inv__btn{margin-top:auto;width:100%;background:var(--forest);color:var(--ivory);border-radius:30px;padding:10px;font-size:.78rem;font-weight:600}
+.inv__btn{margin-top:auto;width:100%;border:0;cursor:pointer;font-family:var(--sans);background:var(--forest);color:var(--ivory);border-radius:30px;padding:10px;font-size:.78rem;font-weight:600;transition:background var(--ease),transform .2s ease}
+.inv__btn:hover{transform:translateY(-1px)}
+.inv__btn:active{transform:scale(.97)}
+.inv__btn.is-confirmed{background:var(--sage);color:var(--forest)}
 
 /* Pasos */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
@@ -282,5 +287,6 @@ em{font-style:italic;color:inherit}
   html{scroll-behavior:auto}
   .js .reveal{opacity:1;transform:none;transition:none}
   .countdown,.hero__logo{transition:none}
+  .inv__count b.tick{animation:none}
   .demo__phone--live,.xv__env,.xv__tap,.xv__star,.demo__badge i{animation:none}
 }

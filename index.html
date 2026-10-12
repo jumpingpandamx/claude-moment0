@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/invitaciones.css?v=5" />
+  <link rel="stylesheet" href="css/invitaciones.css?v=6" />
 </head>
 <body>
 
@@ -79,25 +79,26 @@
   <section class="section section--white" id="que-es">
     <div class="container split">
       <div class="split__text reveal">
-        <span class="label">Qué es</span>
+        <span class="label">¿Qué es?</span>
         <h2 class="section-title">Tu invitación, en un link</h2>
         <p>Olvídate de imprimir, repartir y preguntar quién sí va. Tu invitación llega por WhatsApp y se abre como una página hecha solo para tu evento: con la ubicación, la cuenta regresiva, la confirmación de asistencia y todos los detalles en un solo lugar.</p>
       </div>
-      <div class="split__visual reveal" aria-hidden="true">
+      <div class="split__visual reveal">
         <div class="phone">
           <div class="phone__notch"></div>
           <div class="phone__screen">
             <p class="inv__kicker">Nos casamos</p>
             <p class="inv__names">Sofía <span>&amp;</span> Mateo</p>
             <p class="inv__date">Sábado 14 de marzo · 6:00 pm</p>
-            <div class="inv__count">
-              <div><b>42</b><small>días</small></div>
-              <div><b>06</b><small>horas</small></div>
-              <div><b>18</b><small>min</small></div>
+            <div class="inv__count" id="inv-count" aria-hidden="true">
+              <div><b data-u="d">42</b><small>días</small></div>
+              <div><b data-u="h">06</b><small>horas</small></div>
+              <div><b data-u="m">18</b><small>min</small></div>
+              <div><b data-u="s">27</b><small>seg</small></div>
             </div>
             <div class="inv__row"><i class="fa-solid fa-location-dot"></i> Cómo llegar</div>
             <div class="inv__row"><i class="fa-solid fa-calendar-plus"></i> Agregar al calendario</div>
-            <div class="inv__btn">Confirmar asistencia</div>
+            <button type="button" class="inv__btn" id="inv-btn"><span class="inv__btn-text">Confirmar asistencia</span></button>
           </div>
         </div>
       </div>
@@ -155,7 +156,7 @@
   <section class="section section--ivory" id="incluye">
     <div class="container">
       <div class="section-head reveal">
-        <span class="label">Qué puede llevar tu invitación</span>
+        <span class="label">¿Qué puede llevar tu invitación?</span>
         <h2 class="section-title">Todo lo que tus invitados necesitan saber</h2>
       </div>
       <ul class="features">
@@ -420,6 +421,6 @@
     </div>
   </footer>
 
-  <script src="js/invitaciones.js?v=5"></script>
+  <script src="js/invitaciones.js?v=6"></script>
 </body>
 </html>

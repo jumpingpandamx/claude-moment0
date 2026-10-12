@@ -97,6 +97,36 @@
     if (show) table.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
   });
 
+  /* Mockup "Nos casamos": cuenta regresiva en vivo y botón de confirmar */
+  var invCount = document.getElementById('inv-count');
+  if (invCount) {
+    var invEls = {};
+    invCount.querySelectorAll('[data-u]').forEach(function (el) { invEls[el.dataset.u] = el; });
+    var invTarget = Date.now() + ((42 * 86400) + (6 * 3600) + (18 * 60) + 27) * 1000;
+    var invLast = {};
+    function invTick() {
+      var left = Math.max(0, Math.floor((invTarget - Date.now()) / 1000));
+      var v = { d: Math.floor(left / 86400), h: Math.floor(left % 86400 / 3600), m: Math.floor(left % 3600 / 60), s: left % 60 };
+      Object.keys(v).forEach(function (k) {
+        var txt = pad(v[k]);
+        if (invLast[k] === txt) return;
+        invLast[k] = txt;
+        invEls[k].textContent = txt;
+        if (!reduce) { invEls[k].classList.remove('tick'); void invEls[k].offsetWidth; invEls[k].classList.add('tick'); }
+      });
+    }
+    invTick();
+    setInterval(invTick, 1000);
+  }
+  var invBtn = document.getElementById('inv-btn');
+  if (invBtn) {
+    invBtn.addEventListener('click', function () {
+      var on = invBtn.classList.toggle('is-confirmed');
+      invBtn.querySelector('.inv__btn-text').textContent = on ? '¡Asistencia confirmada! ✓' : 'Confirmar asistencia';
+      invBtn.setAttribute('aria-pressed', on);
+    });
+  }
+
   /* Demos y legales pendientes: no navegan */
   document.querySelectorAll('.demo__link.is-soon, [data-pending]').forEach(function (a) {
     a.addEventListener('click', function (e) { e.preventDefault(); });
