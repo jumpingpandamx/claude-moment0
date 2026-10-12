@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HDMWQ01Z2"></script>
@@ -10,551 +10,404 @@
     gtag('config', 'G-9HDMWQ01Z2');
   </script>
   <meta charset="UTF-8" />
+  <script>document.documentElement.classList.remove("no-js")</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moment0 — Real Connections</title>
+  <title>Moment0 — Invitaciones digitales</title>
+  <meta name="description" content="Invitaciones digitales para bodas, XV años, bautizos y más. Un link con ubicación, cuenta regresiva y confirmación de asistencia. Desde $999." />
+  <meta name="theme-color" content="#F6F3EC" />
   <meta name="tiktok" content="@somos.moment0" />
-  <meta name="description" content="Moment0 — Real Connections. A collection of unique experiences: speed dating, board game nights, wine tastings and coffee parties in Colonia Roma, CDMX." />
-  <!-- Hero LCP preload — high priority so browser fetches it before parsing body -->
-  <link rel="preload" as="image" href="assets/hero-bg.webp" type="image/webp" fetchpriority="high" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Moment0 — Invitaciones digitales" />
+  <meta property="og:description" content="Un link, todos los detalles, y tus invitados contando los días contigo." />
+  <meta property="og:url" content="https://moment0.mx/" />
+  <link rel="canonical" href="https://moment0.mx/" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <!-- Google Fonts: non-blocking load -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" /></noscript>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <!-- Font Awesome: non-blocking load (all icons are below the fold) -->
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
-  <!-- Critical CSS inlined: only rules needed to render the nav + hero without waiting for styles.css -->
-  <style>
-:root{--black:#f5f7f6;--dark:#e8eeeb;--dark2:#ffffff;--gold:#5f6f5e;--gold-lt:#6f7f79;--teal:#6f7f79;--violet:#69717a;--stone-lt:#68736f;--white:#252927;--grey:#6f7773;--font-serif:'Playfair Display',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif;--radius:12px;--transition:0.3s ease}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:var(--font-sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-picture{display:contents}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-em{font-style:italic;color:var(--gold-lt)}
-.btn{display:inline-block;padding:14px 32px;border-radius:40px;font-size:.9rem;font-weight:600;letter-spacing:.04em;transition:var(--transition);cursor:pointer;border:none}
-.btn--primary{background:var(--gold);color:var(--dark2)}
-.btn--primary:hover{background:#4b584a;transform:translateY(-2px)}
-.btn--sm{padding:10px 22px;font-size:.82rem}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;color:#f8fbf9;transition:background var(--transition),padding var(--transition)}
-.nav.scrolled{background:rgba(245,247,246,.94);backdrop-filter:blur(12px);padding:14px 0;border-bottom:1px solid rgba(95,111,94,.18);box-shadow:0 12px 30px rgba(37,41,39,.08);color:var(--white)}
-.nav__inner{display:flex;align-items:center;justify-content:space-between}
-.nav__logo{font-family:var(--font-serif);font-size:1.5rem;font-weight:700;letter-spacing:-.01em}
-.nav__logo span{color:var(--gold)}
-.nav__logo-img{height:36px;width:auto;display:block;filter:brightness(0) invert(1);transition:filter var(--transition)}.nav.scrolled .nav__logo-img{filter:brightness(0)}
-.nav__links{list-style:none;display:flex;align-items:center;gap:36px;font-size:.88rem;font-weight:500}
-.nav__links a:not(.btn):hover{color:var(--gold);transition:color var(--transition)}
-.lang-toggle{display:flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;letter-spacing:.08em;color:var(--grey)}
-.lang-btn{background:none;border:none;color:var(--grey);font-size:.78rem;font-weight:600;letter-spacing:.08em;cursor:pointer;padding:4px 2px;transition:color var(--transition);font-family:var(--font-sans)}
-.lang-btn:hover{color:#f8fbf9}.nav.scrolled .lang-btn:hover{color:var(--white)}.nav:not(.scrolled) .lang-toggle,.nav:not(.scrolled) .lang-btn{color:rgba(248,251,249,.76)}
-.lang-btn.active{color:var(--gold)}
-.nav__hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav__hamburger span{display:block;width:24px;height:2px;background:#f8fbf9;border-radius:2px;transition:var(--transition)}.nav.scrolled .nav__hamburger span{background:var(--white)}
-.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
-.hero__bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(34,35,31,.52) 0%,rgba(95,111,94,.34) 48%,rgba(111,127,121,.28) 100%)}
-.hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(245,247,246,.24) 0%,rgba(111,127,121,.12) 36%,transparent 70%)}
-.hero__content{position:relative;z-index:1;max-width:640px;padding-top:100px;color:#f8fbf9}
-.hero__tag{font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#dce5df;margin-bottom:20px}
-.hero__title{font-family:var(--font-serif);font-size:clamp(3rem,7vw,5.5rem);font-weight:700;line-height:1.05;margin-bottom:24px}
-.hero__title em{color:#f4f8f6;background:linear-gradient(90deg,#f4f8f6 0%,#dce5df 52%,#b9c5bf 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero__sub{font-size:1.1rem;color:rgba(248,251,249,.78);max-width:480px;margin-bottom:40px;font-weight:300}.hero .btn--outline{border-color:rgba(248,251,249,.85);color:#f8fbf9}.hero .btn--outline:hover{background:#f8fbf9;color:var(--white)}
-@media(max-width:680px){.nav__links{display:none}.nav__hamburger{display:flex}.hero__title{font-size:3rem}}
-.nav__item--dropdown{position:relative}
-.nav__submenu{position:absolute;top:100%;left:0;padding-top:14px;min-width:210px;display:none}
-.nav__item--dropdown:hover .nav__submenu{display:block}
-.nav__submenu-card{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border:1px solid rgba(95,111,94,.2);border-radius:12px;padding:8px;display:flex;flex-direction:column;gap:2px;box-shadow:0 16px 40px rgba(37,41,39,.16)}
-.nav__submenu-card a{padding:10px 14px;border-radius:8px;font-size:.85rem;font-weight:500;color:var(--white);white-space:nowrap;transition:background var(--transition),color var(--transition)}
-.nav__submenu-card a:hover{background:rgba(95,111,94,.08);color:var(--gold)}
-.nav__evtoggle{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
-.nav__evtoggle::after{content:'▾';font-size:.7em;opacity:.65;display:inline-block;transition:transform var(--transition)}
-.nav__item--dropdown:hover .nav__evtoggle::after{transform:rotate(180deg)}
-@media(max-width:680px){.nav__submenu{position:static;display:block;padding-top:6px;min-width:0}.nav__submenu-card{background:transparent;backdrop-filter:none;border:none;box-shadow:none;padding:4px 0 0 16px;gap:0}.nav__submenu-card a{padding:8px 0;color:rgba(255,248,241,.75)}.nav__evtoggle::after{display:none}}
-  </style>
-  <!-- Full stylesheet: async so it never blocks first paint -->
-  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="css/styles.css" /></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/invitaciones.css" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
+  <!-- MENÚ -->
+  <header class="nav" id="nav">
     <div class="nav__inner container">
-      <a class="nav__logo" href="#">
-        <img src="assets/logo.svg" alt="Moment0" class="nav__logo-img" />
+      <a class="nav__logo" href="#inicio" aria-label="Moment0, inicio">
+        <img src="assets/logo.svg" alt="Moment0" width="130" height="36" />
       </a>
-      <ul class="nav__links">
-        <li class="nav__item nav__item--dropdown">
-          <a href="#eventos" class="nav__evtoggle" data-i18n="nav.events">Eventos</a>
-          <div class="nav__submenu">
-            <div class="nav__submenu-card">
-              <a href="/speed-dating-cdmx/" data-i18n="nav.ev.speed">Speed Dating</a>
-              <a href="/coffee-party-cdmx/" data-i18n="nav.ev.coffee">Coffee Party</a>
-            </div>
-          </div>
-        </li>
-        <li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li>
-        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-        <li><a href="#contacto" class="btn btn--sm" data-i18n="nav.cta">Reserva tu lugar</a></li>
-      </ul>
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="es">ES</button>
-        <span>|</span>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <button class="nav__hamburger" aria-label="Menú">
+      <nav class="nav__links" id="nav-links" aria-label="Principal">
+        <a href="#paquetes">Paquetes</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#demos">Demos</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20Moment0." class="btn btn--forest btn--sm" target="_blank" rel="noopener noreferrer">Cotiza por WhatsApp</a>
+      </nav>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <picture>
-      <source srcset="assets/hero-bg.webp" type="image/webp">
-      <img src="assets/hero-bg.jpg" alt="" class="hero__bg-img" fetchpriority="high" width="1920" height="1080">
-    </picture>
-    <div class="hero__overlay"></div>
-    <div class="hero__content container">
-      <p class="hero__tag">Colonia Roma · CDMX</p>
-      <h1 class="hero__title" data-i18n-html="hero.title">El momento<br/>en que todo<br/><em>comienza.</em></h1>
-      <p class="hero__sub" data-i18n="hero.sub">Experiencias diseñadas para conectar, disfrutar y recordar. Eventos sociales, corporativos y culturales en un espacio que lo tiene todo.</p>
-      <a href="#eventos" class="btn btn--primary" data-i18n="hero.cta">Ver próximos eventos</a>
-    </div>
-  </section>
+  <main>
 
-  <!-- ABOUT -->
-  <section class="about" id="nosotros">
-    <div class="container about__grid">
-      <div class="about__text">
-        <span class="label" data-i18n="about.label">¿Qué es Moment0?</span>
-        <h2 data-i18n-html="about.title">Ese instante justo antes<br/>de que todo pase.</h2>
-        <p data-i18n="about.p1">Moment0 nació de la idea de que los mejores recuerdos empiezan en un punto específico: el momento en que decides estar presente. Creamos eventos únicos en un bar y restaurante boutique en la Colonia Roma donde la experiencia lo es todo — desde la primera copa hasta el último beat.</p>
-        <p data-i18n="about.p2">Sociales, corporativos, exposiciones, degustaciones. Si hay personas, hay historia. Y aquí creamos la tuya.</p>
+  <!-- 1. HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero__inner">
+      <div class="hero__stage" id="hero-stage">
+        <div class="countdown" id="hero-countdown" role="img" aria-label="Cuenta regresiva que llega a cero">
+          <div class="countdown__unit"><span data-unit="d">00</span><small>días</small></div>
+          <span class="countdown__sep">:</span>
+          <div class="countdown__unit"><span data-unit="h">00</span><small>horas</small></div>
+          <span class="countdown__sep">:</span>
+          <div class="countdown__unit"><span data-unit="m">00</span><small>min</small></div>
+          <span class="countdown__sep">:</span>
+          <div class="countdown__unit"><span data-unit="s">00</span><small>seg</small></div>
+        </div>
+        <img class="hero__logo" src="assets/logo.svg" alt="Moment0" width="360" height="100" />
       </div>
-      <div class="about__right">
-        <picture>
-          <source srcset="assets/about-venue.webp" type="image/webp">
-          <img src="assets/about-venue.jpg" alt="Venue" class="about__img" loading="lazy" width="1200" height="800" />
-        </picture>
-      <div class="about__stats">
-        <div class="stat">
-          <strong>4</strong>
-          <span data-i18n="about.stat1">Tipos de evento</span>
-        </div>
-        <div class="stat">
-          <strong>Roma</strong>
-          <span data-i18n="about.stat2">Ubicación</span>
-        </div>
-        <div class="stat">
-          <strong>∞</strong>
-          <span data-i18n="about.stat3">Conexiones</span>
-        </div>
-      </div>
+      <h1 class="hero__title">El momento en que <em>todo comienza.</em></h1>
+      <p class="hero__sub">Invitaciones digitales para tus eventos más importantes. Un link, todos los detalles, y tus invitados contando los días contigo.</p>
+      <div class="hero__cta">
+        <a href="#paquetes" class="btn btn--forest">Ver paquetes</a>
+        <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20Moment0." class="btn btn--outline" target="_blank" rel="noopener noreferrer">Cotiza por WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <!-- EVENTOS -->
-  <section class="eventos" id="eventos">
+  <!-- 2. QUÉ ES -->
+  <section class="section section--white" id="que-es">
+    <div class="container split">
+      <div class="split__text reveal">
+        <span class="label">Qué es</span>
+        <h2 class="section-title">Tu invitación, en un link</h2>
+        <p>Olvídate de imprimir, repartir y preguntar quién sí va. Tu invitación llega por WhatsApp y se abre como una página hecha solo para tu evento: con la ubicación, la cuenta regresiva, la confirmación de asistencia y todos los detalles en un solo lugar.</p>
+      </div>
+      <div class="split__visual reveal" aria-hidden="true">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <p class="inv__kicker">Nos casamos</p>
+            <p class="inv__names">Sofía <span>&amp;</span> Mateo</p>
+            <p class="inv__date">Sábado 14 de marzo · 6:00 pm</p>
+            <div class="inv__count">
+              <div><b>42</b><small>días</small></div>
+              <div><b>06</b><small>horas</small></div>
+              <div><b>18</b><small>min</small></div>
+            </div>
+            <div class="inv__row"><i class="fa-solid fa-location-dot"></i> Cómo llegar</div>
+            <div class="inv__row"><i class="fa-solid fa-calendar-plus"></i> Agregar al calendario</div>
+            <div class="inv__btn">Confirmar asistencia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CÓMO FUNCIONA -->
+  <section class="section section--ivory" id="como-funciona">
     <div class="container">
-      <span class="label" data-i18n="events.label">Próximas experiencias</span>
-      <h2 class="section-title" data-i18n="events.title">Elige tu Moment0</h2>
-
-      <div class="eventos__grid">
-
-        <!-- Speed Dating -->
-        <article class="card card--dating">
-          <picture>
-            <source srcset="assets/speed-dating.webp" type="image/webp">
-            <img src="assets/speed-dating.jpg" alt="Speed Dating" class="card__img" loading="lazy" width="1600" height="1120" />
-          </picture>
-          <div class="card__badge" data-i18n="badge.social">Social</div>
-          <div class="card__emoji">💫</div>
-          <h3 class="card__title" data-i18n="dating.title">Speed Dating</h3>
-          <p class="card__desc" data-i18n="dating.desc">Tres minutos. Una persona. La posibilidad de que todo cambie. Conoce a todos los asistentes en una noche de conversaciones rápidas, snacks y bebida incluida. Si hay chispa, se comparte número de WhatsApp.</p>
-          <ul class="card__details">
-            <li data-i18n="dating.d1">⏱ 3 min por pareja</li>
-            <li data-i18n="dating.d2">🍹 Bebida y snacks incluidos</li>
-            <li data-i18n="dating.d3">📲 Match = intercambio de WhatsApp</li>
-            <li data-i18n="dating.d4">💳 $1,000 MXN por persona · incluye canapé y copa de bienvenida</li>
-          </ul>
-          <a href="/speed-dating-cdmx/" class="btn btn--outline" data-i18n="card.cta">Quiero asistir</a>
-        </article>
-
-        <!-- Noche de Juegos -->
-        <article class="card card--games">
-          <picture>
-            <source srcset="assets/board-games.webp" type="image/webp">
-            <img src="assets/board-games.jpg" alt="Board Game Night" class="card__img" loading="lazy" width="800" height="560" />
-          </picture>
-          <div class="card__badge" data-i18n="badge.social">Social</div>
-          <div class="card__emoji">🎲</div>
-          <h3 class="card__title" data-i18n="games.title">Noche de Juegos de Mesa</h3>
-          <p class="card__desc" data-i18n="games.desc">Olvídate de la pantalla. Una noche rodeada de juegos clásicos y modernos, buena comida, snacks y la mejor compañía. Cover de entrada, todo lo demás es diversión.</p>
-          <ul class="card__details">
-            <li data-i18n="games.d1">🃏 Selección de juegos de mesa</li>
-            <li data-i18n="games.d2">🍕 Ronda de snacks y comida</li>
-            <li data-i18n="games.d3">🎟 Cover de entrada</li>
-            <li data-i18n="other.date">📅 Fecha por confirmar</li>
-          </ul>
-          <a href="#contacto" class="btn btn--outline" data-i18n="card.cta">Quiero asistir</a>
-        </article>
-
-        <!-- Cata de Vinos -->
-        <article class="card card--wine">
-          <picture>
-            <source srcset="assets/wine-tasting.webp" type="image/webp">
-            <img src="assets/wine-tasting.jpg" alt="Wine Tasting" class="card__img" loading="lazy" width="800" height="560" />
-          </picture>
-          <div class="card__badge" data-i18n="badge.cultural">Cultural</div>
-          <div class="card__emoji">🍷</div>
-          <h3 class="card__title" data-i18n="wine.title">Cata de Vinos</h3>
-          <p class="card__desc" data-i18n="wine.desc">Una experiencia sensorial para los que quieren saber más sobre el mundo del vino. Degustación guiada, maridaje, información vinícola y todo lo que quieras comer. El vino ya está incluido.</p>
-          <ul class="card__details">
-            <li data-i18n="wine.d1">🍇 Vinos seleccionados incluidos</li>
-            <li data-i18n="wine.d2">📖 Guía de cata y maridaje</li>
-            <li data-i18n="wine.d3">🧀 Comida a la carta</li>
-            <li data-i18n="other.date">📅 Fecha por confirmar</li>
-          </ul>
-          <a href="#contacto" class="btn btn--outline" data-i18n="card.cta">Quiero asistir</a>
-        </article>
-
-        <!-- Coffee Party -->
-        <article class="card card--coffee">
-          <picture>
-            <source srcset="assets/coffee-party.webp" type="image/webp">
-            <img src="assets/coffee-party.jpg" alt="Coffee Party" class="card__img" loading="lazy" width="800" height="560" />
-          </picture>
-          <div class="card__badge" data-i18n="badge.party">Fiesta</div>
-          <div class="card__emoji">☕</div>
-          <h3 class="card__title" data-i18n="coffee.title">Coffee Party</h3>
-          <p class="card__desc" data-i18n="coffee.desc">¿Por qué esperar a la noche para festejar? A partir de las 10am, DJ en vivo, café de especialidad, pan artesanal y si quieres algo con más vuelo: mimosas, cervezas y cócteles ligeros. Cinco horas de pura energía matutina.</p>
-          <ul class="card__details">
-            <li data-i18n="coffee.d1">☀️ 10am — 3pm</li>
-            <li data-i18n="coffee.d2">🎵 DJ en vivo · 5 horas</li>
-            <li data-i18n="coffee.d3">🥂 Café + opción de alcohol ligero</li>
-            <li data-i18n="other.date">📅 Fecha por confirmar</li>
-          </ul>
-          <a href="/coffee-party-cdmx/" class="btn btn--outline" data-i18n="card.cta">Quiero asistir</a>
-        </article>
-
+      <div class="section-head reveal">
+        <span class="label">Cómo funciona</span>
+        <h2 class="section-title">Tu invitación en 3 pasos</h2>
       </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step__icon"><i class="fa-solid fa-clipboard-check"></i></span>
+          <span class="step__num">1</span>
+          <p>Elige tu paquete.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__icon"><i class="fa-solid fa-images"></i></span>
+          <span class="step__num">2</span>
+          <p>Mándanos tus fotos y datos.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__icon"><i class="fa-solid fa-link"></i></span>
+          <span class="step__num">3</span>
+          <p>Recibe tu invitación. Te mandamos el link de tu invitación lista y tú lo compartes con tus invitados.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- TRES MINUTOS EVENT -->
-  <section class="tm" id="tres-minutos">
+  <!-- 4. EVENTOS -->
+  <section class="section section--white" id="eventos">
     <div class="container">
+      <div class="section-head reveal">
+        <span class="label">Eventos</span>
+        <h2 class="section-title">Para cada momento</h2>
+      </div>
+      <ul class="events">
+        <li class="event reveal"><i class="fa-solid fa-ring"></i><span>Boda</span></li>
+        <li class="event reveal"><i class="fa-solid fa-crown"></i><span>XV años</span></li>
+        <li class="event reveal"><i class="fa-solid fa-dove"></i><span>Bautizo</span></li>
+        <li class="event reveal"><i class="fa-solid fa-cross"></i><span>Primera comunión</span></li>
+        <li class="event reveal"><i class="fa-solid fa-champagne-glasses"></i><span>Fiesta</span></li>
+        <li class="event reveal"><i class="fa-solid fa-baby-carriage"></i><span>Baby shower</span></li>
+        <li class="event reveal"><i class="fa-solid fa-calendar-check"></i><span>Save the date</span></li>
+        <li class="event reveal"><i class="fa-solid fa-tree"></i><span>Posadas y eventos de empresa</span></li>
+      </ul>
+    </div>
+  </section>
 
-      <!-- PART 1: OVERVIEW -->
-      <div class="tm__overview">
-        <span class="tm__eyebrow" data-i18n="tm.eyebrow">Próximo evento</span>
-        <h2 class="tm__title">Tres Minutos <span>by Moment0</span></h2>
-        <p class="tm__subtitle" data-i18n="tm.subtitle">Una noche de speed dating, mezcal y conexiones reales · Roma Norte, CDMX</p>
+  <!-- 5. QUÉ PUEDE LLEVAR -->
+  <section class="section section--ivory" id="incluye">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="label">Qué puede llevar tu invitación</span>
+        <h2 class="section-title">Todo lo que tus invitados necesitan saber</h2>
+      </div>
+      <ul class="features">
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-hourglass-half"></i></span><div><h3>Cuenta regresiva</h3><p>Para que todos cuenten los días contigo.</p></div></li>
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-location-dot"></i></span><div><h3>Cómo llegar</h3><p>Abren el mapa en un toque y llegan sin perderse.</p></div></li>
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-circle-check"></i></span><div><h3>Confirmación de asistencia</h3><p>Sabes quién va, sin perseguir a nadie.</p></div></li>
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-gift"></i></span><div><h3>Mesa de regalos o lluvia de sobres</h3><p>Lo que prefieras, a un clic.</p></div></li>
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-images"></i></span><div><h3>Fotos y video</h3><p>Tu historia, en la invitación.</p></div></li>
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-music"></i></span><div><h3>Música de fondo</h3><p>La canción que acompaña tu invitación.</p></div></li>
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-shirt"></i></span><div><h3>Itinerario y código de vestimenta</h3><p>Nadie tiene que preguntar.</p></div></li>
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-people-roof"></i></span><div><h3>Pase por familia</h3><p>Cada invitado ve cuántos lugares tiene.</p></div></li>
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-photo-film"></i></span><div><h3>Álbum compartido</h3><p>Tus invitados suben sus fotos del evento.</p></div></li>
+        <li class="feature reveal"><span class="feature__icon"><i class="fa-solid fa-language"></i></span><div><h3>Versión bilingüe</h3><p>Para invitados de cualquier parte del mundo.</p></div></li>
+      </ul>
+    </div>
+  </section>
 
-        <div class="tm__meta">
-          <div class="tm__meta-item">
-            <i class="fa-regular fa-calendar"></i>
-            <span data-i18n="tm.date">Próximas fechas muy pronto</span>
-          </div>
-          <div class="tm__meta-item">
-            <i class="fa-regular fa-user"></i>
-            <span data-i18n="tm.capacity">Cupo limitado · Solo 20 personas</span>
-          </div>
-          <div class="tm__meta-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <span data-i18n="tm.location">El lugar exacto se confirma 48 horas antes del evento</span>
-          </div>
-          <div class="tm__meta-item">
-            <i class="fa-solid fa-ticket"></i>
-            <span data-i18n="tm.price">$1,000 MXN por persona · Incluye canapé de bienvenida y una copa</span>
-          </div>
-        </div>
-
-        <div class="tm__countdown">
-          <p class="tm__countdown-today" data-i18n="tm.soon">Próximas fechas muy pronto — Mantente al tanto</p>
-        </div>
-
-        <p class="tm__desc" data-i18n="tm.desc">Llega solo. Sal con una historia. Tendrás tres minutos con cada persona — una copa en la mano, música de fondo, sin presión. Al final de la noche, tú decides.</p>
+  <!-- 6. PAQUETES -->
+  <section class="section section--forest" id="paquetes">
+    <div class="container">
+      <div class="section-head section-head--light reveal">
+        <span class="label">Paquetes</span>
+        <h2 class="section-title">Elige tu paquete</h2>
       </div>
 
-      <!-- SCREENING NOTICE -->
-      <div class="tm__screening">
-        <h4 class="tm__screening-title" data-i18n="tm.screening.title">Proceso de admisión</h4>
-        <p class="tm__screening-body" data-i18n="tm.screening.body">Moment0 cura cada evento para garantizar la mejor experiencia para todos los asistentes. Al reservar tu lugar, recibirás un mensaje de WhatsApp con instrucciones rápidas. Tu lugar se confirma en menos de 24 horas una vez que revisemos tu perfil.</p>
-        <div class="tm__screening-pills">
-          <span class="tm__pill" data-i18n="tm.screening.p1">✓ Perfiles verificados</span>
-          <span class="tm__pill" data-i18n="tm.screening.p2">✓ Cupo balanceado</span>
-          <span class="tm__pill" data-i18n="tm.screening.p3">✓ Confirmación en 24hrs</span>
-        </div>
-      </div>
-
-      <!-- PART 2: TWO-COLUMN SPLIT -->
-      <div class="tm__split">
-
-        <!-- WOMEN -->
-        <div class="tm__col tm__col--women">
-          <div class="tm__col-header">
-            <span class="tm__col-icon">🌸</span>
-            <h3 data-i18n="tm.women.title">Para ellas</h3>
-          </div>
-          <ul class="tm__list">
-            <li data-i18n="tm.women.l1">Evento 100% curado y seguro</li>
-            <li data-i18n="tm.women.l2">Cupo máximo de 10 mujeres</li>
-            <li data-i18n="tm.women.l3">Staff de Moment0 presente en todo momento</li>
-            <li data-i18n="tm.women.l4">Tolerancia cero a comportamiento irrespetuoso — cualquier asistente puede ser retirado inmediatamente</li>
-            <li data-i18n="tm.women.l5">El intercambio de información personal es siempre tu decisión</li>
-            <li data-i18n="tm.women.l6">Nadie entra sin reserva previa — todos los asistentes son verificados</li>
-            <li data-i18n="tm.women.l7">Si en algún momento no te sientes cómoda, acércate al staff de inmediato</li>
+      <div class="packages">
+        <article class="pkg reveal">
+          <h3 class="pkg__name">Esencial</h3>
+          <p class="pkg__price">$999</p>
+          <p class="pkg__desc">Lo necesario, bonito y sin complicaciones.</p>
+          <ul class="pkg__list">
+            <li>Nombres, evento, fecha y hora</li>
+            <li>Diseño con la temática que elijas</li>
+            <li>Cuenta regresiva</li>
+            <li>Cómo llegar</li>
+            <li>Confirmación por WhatsApp</li>
+            <li>1 ronda de cambios</li>
+            <li>Disponible 3 meses</li>
           </ul>
-        </div>
+          <a href="https://wa.me/527229313202?text=Hola%2C%20me%20interesa%20el%20paquete%20Esencial%20de%20invitaciones%20digitales%20de%20Moment0.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn btn--forest btn--block" target="_blank" rel="noopener noreferrer">Quiero este paquete</a>
+        </article>
 
-        <div class="tm__divider"></div>
-
-        <!-- MEN -->
-        <div class="tm__col tm__col--men">
-          <div class="tm__col-header">
-            <span class="tm__col-icon">⚡</span>
-            <h3 data-i18n="tm.men.title">Para ellos</h3>
-          </div>
-          <ul class="tm__list">
-            <li data-i18n="tm.men.l1">Cupo máximo de 10 hombres</li>
-            <li data-i18n="tm.men.l2">Evento balanceado — igual número de hombres y mujeres</li>
-            <li data-i18n="tm.men.l3">Dinámica clara y sin presión</li>
-            <li data-i18n="tm.men.l4">Respeto absoluto en todo momento — un "no" es un "no"</li>
-            <li data-i18n="tm.men.l5">Sin teléfonos durante las rondas — atención total a la conversación</li>
-            <li data-i18n="tm.men.l6">Dress code: smart casual</li>
-            <li data-i18n="tm.men.l7">Llega puntual — las rondas inician a la hora indicada</li>
+        <article class="pkg reveal">
+          <h3 class="pkg__name">Clásica</h3>
+          <p class="pkg__price">$1,990</p>
+          <p class="pkg__desc">Con fotos y los detalles que tus invitados necesitan.</p>
+          <ul class="pkg__list">
+            <li class="pkg__more">Todo lo del Esencial, más:</li>
+            <li>Padres y padrinos</li>
+            <li>Frase especial o versículo</li>
+            <li>Hasta 5 fotos</li>
+            <li>Link a mesa de regalos</li>
+            <li>2 rondas de cambios</li>
           </ul>
-        </div>
+          <a href="https://wa.me/527229313202?text=Hola%2C%20me%20interesa%20el%20paquete%20Cl%C3%A1sica%20de%20invitaciones%20digitales%20de%20Moment0.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn btn--forest btn--block" target="_blank" rel="noopener noreferrer">Quiero este paquete</a>
+        </article>
 
+        <article class="pkg pkg--featured reveal">
+          <span class="pkg__badge">La más elegida</span>
+          <h3 class="pkg__name">Destello</h3>
+          <p class="pkg__price">$2,990</p>
+          <p class="pkg__desc">Para celebraciones con más detalle.</p>
+          <ul class="pkg__list">
+            <li class="pkg__more">Todo lo de Clásica, más:</li>
+            <li>Hasta 15 fotos</li>
+            <li>Mesa de regalos o lluvia de sobres</li>
+            <li>Confirmación con formulario en la página</li>
+            <li>Agregar al calendario</li>
+            <li>Música de fondo</li>
+            <li>Código de vestimenta</li>
+            <li>Itinerario</li>
+            <li>Versión en inglés o bilingüe</li>
+            <li>Disponible 6 meses</li>
+          </ul>
+          <a href="https://wa.me/527229313202?text=Hola%2C%20me%20interesa%20el%20paquete%20Destello%20de%20invitaciones%20digitales%20de%20Moment0.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn btn--forest btn--block" target="_blank" rel="noopener noreferrer">Quiero este paquete</a>
+        </article>
+
+        <article class="pkg reveal">
+          <h3 class="pkg__name">Gran Momento</h3>
+          <p class="pkg__price">$3,990</p>
+          <p class="pkg__desc">Tu invitación, sin límites.</p>
+          <ul class="pkg__list">
+            <li class="pkg__more">Todo lo de Destello, más:</li>
+            <li>Fotos ilimitadas y video</li>
+            <li>Pase por familia</li>
+            <li>Restricciones alimentarias en la confirmación</li>
+            <li>Lista de confirmados descargable</li>
+            <li>Hospedaje, maquillaje, peinado y transporte para foráneos</li>
+            <li>Save the date</li>
+            <li>Álbum para que tus invitados suban fotos</li>
+            <li>3 rondas de cambios</li>
+          </ul>
+          <a href="https://wa.me/527229313202?text=Hola%2C%20me%20interesa%20el%20paquete%20Gran%20Momento%20de%20invitaciones%20digitales%20de%20Moment0.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn btn--forest btn--block" target="_blank" rel="noopener noreferrer">Quiero este paquete</a>
+        </article>
       </div>
 
-      <!-- PART 3: SAFETY GUIDELINES -->
-      <div class="tm__safety">
-        <h4 class="tm__safety-title" data-i18n="tm.safety.title">
-          <i class="fa-solid fa-shield-halved"></i>
-          Lineamientos de convivencia
-        </h4>
-        <ul class="tm__safety-list">
-          <li data-i18n="tm.safety.l1">Respeto absoluto. Un "no" es un "no". Comportamiento irrespetuoso = salida inmediata sin reembolso.</li>
-          <li data-i18n="tm.safety.l2">El número de hombres y mujeres es exactamente igual. El intercambio de información personal es decisión de cada persona.</li>
-          <li data-i18n="tm.safety.l3">Staff de Moment0 presente en todo momento.</li>
-          <li data-i18n="tm.safety.l4">Tolerancia cero a acoso o comentarios no solicitados sobre apariencia física.</li>
-        </ul>
+      <div class="compare-toggle reveal">
+        <button class="btn btn--ivory-outline" id="compare-btn" aria-expanded="false" aria-controls="compare">Ver comparativa completa</button>
       </div>
 
-      <!-- PART 4: CTA -->
-      <div class="tm__cta">
-        <div class="tm__cta-btns">
-          <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20aviso%20cuando%20anuncien%20la%20pr%C3%B3xima%20fecha%20de%20Tres%20Minutos%20by%20Moment0.%20%C2%BFMe%20pueden%20agregar%20a%20la%20lista%3F" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer" data-i18n="tm.cta.women">Avísame · Mujer</a>
-          <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20aviso%20cuando%20anuncien%20la%20pr%C3%B3xima%20fecha%20de%20Tres%20Minutos%20by%20Moment0.%20%C2%BFMe%20pueden%20agregar%20a%20la%20lista%3F" class="btn btn--primary btn--lg" target="_blank" rel="noopener noreferrer" data-i18n="tm.cta.men">Avísame · Hombre</a>
+      <div class="compare" id="compare" hidden>
+        <div class="compare__scroll">
+          <table>
+            <thead>
+              <tr><th scope="col"><span class="sr-only">Característica</span></th><th scope="col">Esencial</th><th scope="col">Clásica</th><th scope="col" class="is-featured">Destello</th><th scope="col">Gran Momento</th></tr>
+            </thead>
+            <tbody>
+              <tr class="row-price"><th scope="row">Precio</th><td>$999</td><td>$1,990</td><td class="is-featured">$2,990</td><td>$3,990</td></tr>
+              <tr><th scope="row">Nombres, evento, fecha y hora</th><td>✓</td><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Diseño con la temática que elijas</th><td>✓</td><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Cuenta regresiva</th><td>✓</td><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Cómo llegar</th><td>✓</td><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Padres y padrinos</th><td class="no">—</td><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Frase especial o versículo</th><td class="no">—</td><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Fotos</th><td class="no">—</td><td>Hasta 5</td><td class="is-featured">Hasta 15</td><td>Ilimitadas + video</td></tr>
+              <tr><th scope="row">Mesa de regalos</th><td class="no">—</td><td>Link</td><td class="is-featured">Link o lluvia de sobres</td><td>Link o lluvia de sobres</td></tr>
+              <tr><th scope="row">Confirmación</th><td>WhatsApp</td><td>WhatsApp</td><td class="is-featured">Formulario en la página</td><td>Formulario + restricciones alimentarias + lista descargable</td></tr>
+              <tr><th scope="row">Agregar al calendario</th><td class="no">—</td><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Música de fondo</th><td class="no">—</td><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Código de vestimenta</th><td class="no">—</td><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Itinerario</th><td class="no">—</td><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Versión en inglés o bilingüe</th><td class="no">—</td><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Pase por familia</th><td class="no">—</td><td class="no">—</td><td class="is-featured no">—</td><td>✓</td></tr>
+              <tr><th scope="row">Hospedaje, maquillaje, peinado y transporte para foráneos</th><td class="no">—</td><td class="no">—</td><td class="is-featured no">—</td><td>✓</td></tr>
+              <tr><th scope="row">Save the date</th><td class="no">—</td><td class="no">—</td><td class="is-featured no">—</td><td>✓</td></tr>
+              <tr><th scope="row">Álbum para que los invitados suban fotos</th><td class="no">—</td><td class="no">—</td><td class="is-featured no">—</td><td>✓</td></tr>
+              <tr><th scope="row">Rondas de cambios</th><td>1</td><td>2</td><td class="is-featured">2</td><td>3</td></tr>
+              <tr><th scope="row">Disponible en web</th><td>3 meses</td><td>3 meses</td><td class="is-featured">6 meses</td><td>6 meses</td></tr>
+            </tbody>
+          </table>
         </div>
-        <p class="tm__cta-note" data-i18n="tm.cta.note">Déjanos tu WhatsApp y te avisamos cuando abramos la próxima fecha.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="faq__inner">
-      <span class="faq__label">FAQ</span>
-      <h2 class="faq__title" data-i18n="faq.title">Preguntas Frecuentes</h2>
-
-      <div class="faq__list">
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q1">¿Cómo es la dinámica del evento?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a1"></div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q2">¿Hay código de vestimenta?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a2"></div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q3">¿Es seguro conocer personas en un evento así?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a3"></div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q4">¿Qué tipo de personas asisten?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a4"></div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q5">¿Van a ser el mismo número de hombres que mujeres?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a5"></div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q6">¿Qué pasa si me pongo nervioso/a?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a6"></div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q7">¿Puedo ir si nunca he hecho speed dating?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a7"></div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q8">¿Qué pasa si no conecto con nadie?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a8"></div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q9">¿Cómo confirmo mi lugar?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a9"></div>
-          </div>
-        </div>
-
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false">
-            <span data-i18n="faq.q10">¿Puedo asistir si soy extranjero/a?</span>
-            <span class="faq__chevron" aria-hidden="true">›</span>
-          </button>
-          <div class="faq__body">
-            <div class="faq__body-inner" data-i18n-html="faq.a10"></div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CTA / CONTACTO -->
-  <section class="contacto" id="contacto">
-    <div class="container contacto__inner">
-      <h2 data-i18n-html="cta.title">¿Listo para tu<br/><em>Moment0?</em></h2>
-      <p data-i18n="cta.sub">Escríbenos para reservar tu lugar en el próximo evento o para cotizar tu evento privado.</p>
-      <div class="contacto__actions">
-        <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20mi%20lugar%20en%20el%20pr%C3%B3ximo%20evento%20de%20Moment0.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-i18n="cta.wa">💬 Escríbenos por WhatsApp</a>
-        <a href="https://instagram.com/somos.moment0" class="btn btn--outline--light" target="_blank" rel="noopener noreferrer" data-i18n="cta.ig">📸 Síguenos en Instagram</a>
+  <!-- 7. ¿CUÁL ES PARA TI? -->
+  <section class="section section--ivory section--tight" id="cual">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="label">¿Cuál es para ti?</span>
+      </div>
+      <ul class="guide reveal">
+        <li><span>Fiesta, bautizo, primera comunión, baby shower</span><i class="fa-solid fa-arrow-right"></i><strong>Esencial o Clásica</strong></li>
+        <li><span>XV años</span><i class="fa-solid fa-arrow-right"></i><strong>Destello</strong></li>
+        <li><span>Boda</span><i class="fa-solid fa-arrow-right"></i><strong>Gran Momento</strong></li>
+      </ul>
+      <p class="guide__help reveal">¿No sabes cuál elegir? <a href="https://wa.me/527229313202?text=Hola%2C%20no%20s%C3%A9%20qu%C3%A9%20paquete%20de%20invitaci%C3%B3n%20digital%20elegir.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank" rel="noopener noreferrer">Escríbenos y te ayudamos.</a></p>
+    </div>
+  </section>
+
+  <!-- 8. DEMOS -->
+  <section class="section section--white" id="demos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="label">Demos</span>
+        <h2 class="section-title">Míralas funcionando</h2>
+        <p class="section-sub">Abre una demo desde tu celular y vívela como la van a ver tus invitados.</p>
+      </div>
+      <ul class="demos">
+        <li class="demo reveal">
+          <div class="demo__phone" aria-hidden="true"><span></span></div>
+          <a class="demo__link is-soon" href="#demos" aria-disabled="true" data-demo="esencial-cumpleanos"><b>Esencial</b><span>Cumpleaños</span><small>Próximamente</small></a>
+        </li>
+        <li class="demo reveal">
+          <div class="demo__phone" aria-hidden="true"><span></span></div>
+          <a class="demo__link is-soon" href="#demos" aria-disabled="true" data-demo="clasica-bautizo"><b>Clásica</b><span>Bautizo</span><small>Próximamente</small></a>
+        </li>
+        <li class="demo reveal">
+          <div class="demo__phone" aria-hidden="true"><span></span></div>
+          <a class="demo__link is-soon" href="#demos" aria-disabled="true" data-demo="destello-xv"><b>Destello</b><span>XV años</span><small>Próximamente</small></a>
+        </li>
+        <li class="demo reveal">
+          <div class="demo__phone" aria-hidden="true"><span></span></div>
+          <a class="demo__link is-soon" href="#demos" aria-disabled="true" data-demo="gran-momento-boda"><b>Gran Momento</b><span>Boda</span><small>Próximamente</small></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. COLABORADORES -->
+  <section class="section section--sage" id="colaboradores">
+    <div class="container narrow center reveal">
+      <h2 class="section-title">¿Eres wedding planner, fotógrafo o salón de eventos?</h2>
+      <p class="lead">Trabajemos juntos. Tenemos condiciones especiales para ti y tus clientes.</p>
+      <a href="https://wa.me/527229313202?text=Hola%2C%20soy%20proveedor%20de%20eventos%20y%20me%20interesa%20colaborar%20con%20Moment0%20en%20invitaciones%20digitales." class="btn btn--forest" target="_blank" rel="noopener noreferrer">Escríbenos</a>
+    </div>
+  </section>
+
+  <!-- 10. PREGUNTAS FRECUENTES -->
+  <section class="section section--white" id="preguntas">
+    <div class="container narrow">
+      <div class="section-head reveal">
+        <span class="label">Preguntas frecuentes</span>
+        <h2 class="section-title">Todo lo que quizá te estés preguntando</h2>
+      </div>
+      <div class="faq">
+        <details><summary>¿Cuánto tarda mi invitación?</summary><p>15 días hábiles a partir de que tenemos toda tu información completa: datos, fotos y textos.</p></details>
+        <details><summary>¿Con cuánta anticipación la pido?</summary><p>Te recomendamos pedirla al menos 6 semanas antes de tu evento, o de 2 a 3 meses si es boda o XV años. Así la tienes lista sin prisas y tus invitados la reciben con tiempo para organizarse.</p></details>
+        <details><summary>¿Ustedes toman las fotos?</summary><p>No, tú nos mandas las fotos que quieras usar. Te recomendamos fotos claras y bien iluminadas, sin filtros. Para que no pierdan calidad, envíalas por WhatsApp como documento, por correo, o súbelas a la carpeta de Drive que te compartimos.</p></details>
+        <details><summary>¿Nos pueden recomendar un fotógrafo?</summary><p>Sí. Si tu evento es en CDMX o Estado de México, con gusto te compartimos contactos de fotógrafos de confianza.</p></details>
+        <details><summary>¿Cuántos cambios puedo pedir?</summary><p>Depende de tu paquete: Esencial incluye 1 ronda de cambios, Clásica 2, Destello 2 y Gran Momento 3. Una ronda es cuando nos mandas todos tus cambios juntos en un solo mensaje. Cada ronda adicional tiene un costo de $99.</p></details>
+        <details><summary>¿Qué pasa si cambia un dato después de entregada, como la hora o el lugar?</summary><p>Lo actualizamos por $99 por cambio, y tu mismo link se actualiza, así que no tienes que volver a mandarlo.</p></details>
+        <details><summary>¿Cómo pago?</summary><p>Por transferencia. Pagas el 70% de anticipo para comenzar y el 30% restante tres días antes de la entrega.</p></details>
+        <details><summary>¿Los precios incluyen IVA?</summary><p>Sí, todos nuestros precios ya incluyen IVA. Si necesitas factura, solicítala al momento de hacer tu pago.</p></details>
+        <details><summary>¿Puedo subir de paquete después de contratar?</summary><p>Sí, pagando la diferencia. Te recomendamos elegir tu paquete desde el inicio, porque planeamos cada invitación con anticipación para entregártela en tiempo y forma. Si tus planes cambian, con gusto lo ajustamos.</p></details>
+        <details><summary>¿Qué pasa si cancelo?</summary><p>El anticipo no es reembolsable una vez iniciado el diseño. Dependiendo del avance, revisamos tu caso y te decimos si es posible devolverte una parte.</p></details>
+        <details><summary>¿Hacen invitaciones para cualquier lugar?</summary><p>Sí. Al ser digital, hacemos invitaciones para eventos en todo México y en cualquier parte del mundo.</p></details>
+        <details><summary>¿Pueden hacer mi invitación en inglés o bilingüe?</summary><p>Sí, está disponible en los paquetes Destello y Gran Momento.</p></details>
+        <details><summary>¿Cómo la comparto?</summary><p>Te entregamos un link que puedes mandar por WhatsApp, redes o correo.</p></details>
+        <details><summary>¿Mis invitados necesitan descargar algo?</summary><p>No, la invitación se abre directo desde el navegador del celular.</p></details>
+        <details><summary>¿Cómo confirman asistencia mis invitados?</summary><p>En Esencial y Clásica, con un botón que los lleva a tu WhatsApp. En Destello y Gran Momento, con un botón en la invitación que abre un formulario.</p></details>
+        <details><summary>¿Cuánto tiempo está activa mi invitación?</summary><p>3 meses en Esencial y Clásica, y 6 meses en Destello y Gran Momento.</p></details>
+        <details><summary>¿Puedo usar un personaje en mi invitación?</summary><p>Diseñamos tu invitación con la temática que elijas, con ilustraciones propias inspiradas en ella.</p></details>
       </div>
     </div>
   </section>
+
+  <!-- 11. CIERRE -->
+  <section class="section section--forest closing" id="contacto">
+    <div class="container narrow center reveal">
+      <img class="closing__logo" src="assets/logo.svg" alt="Moment0" width="220" height="61" />
+      <h2 class="section-title">¿Listo para tu Moment0?</h2>
+      <p class="lead">Cuéntanos de tu evento y armamos una invitación a su altura.</p>
+      <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20Moment0." class="btn btn--ivory" target="_blank" rel="noopener noreferrer">Cotiza por WhatsApp</a>
+    </div>
+  </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__top">
-
       <div class="footer__brand">
-        <img src="assets/logo.svg" alt="Moment0" class="footer__logo-img" />
-        <p class="footer__tagline">Real Connections</p>
-        <p class="footer__copy">Colonia Roma · Ciudad de México</p>
+        <img src="assets/logo.svg" alt="Moment0" width="130" height="36" />
+        <p>Invitaciones digitales</p>
       </div>
-
-      <div class="footer__contact">
-        <p class="footer__contact-title" data-i18n="footer.contact">Contacto</p>
-        <ul class="footer__contact-list">
-          <li>
-            <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20mi%20lugar%20en%20el%20pr%C3%B3ximo%20evento%20de%20Moment0.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-whatsapp"></i> +52 722 931 3202
-            </a>
-          </li>
-          <li>
-            <a href="mailto:somos@moment0.mx">
-              <i class="fa-solid fa-envelope"></i> somos@moment0.mx
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer__social-col">
-        <p class="footer__contact-title" data-i18n="footer.follow">Síguenos</p>
-        <div class="footer__social">
-          <a href="https://tiktok.com/@somos.moment0" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <i class="fa-brands fa-tiktok"></i>
-          </a>
-          <a href="https://instagram.com/somos.moment0" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://youtube.com/@somos.moment0" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
-          <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20mi%20lugar%20en%20el%20pr%C3%B3ximo%20evento%20de%20Moment0.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </div>
-      </div>
-
+      <ul class="footer__links">
+        <li><a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20Moment0." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> +52 722 931 3202</a></li>
+        <li><a href="mailto:somos@moment0.mx"><i class="fa-solid fa-envelope"></i> somos@moment0.mx</a></li>
+        <li><a href="https://instagram.com/somos.moment0" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+        <li><a href="https://tiktok.com/@somos.moment0" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+      </ul>
+      <ul class="footer__legal">
+        <li><a href="#" data-pending="privacidad">Aviso de privacidad</a></li>
+        <li><a href="#" data-pending="terminos">Términos y condiciones</a></li>
+      </ul>
     </div>
     <div class="footer__bottom">
-      <p>© 2026 Moment0 · Real Connections</p>
-      <p class="footer__credit">Hecho en México con amor 🇲🇽 por <a href="https://www.jumpingpanda.mx" target="_blank" rel="noopener noreferrer">Jumping Panda</a></p>
+      <p>Hecho en México con amor por <a href="https://www.jumpingpanda.mx" target="_blank" rel="noopener noreferrer">Jumping Panda</a></p>
     </div>
   </footer>
 
-  <script src="js/main.js" defer></script>
-
-  <!-- Meta Pixel Code — deferred to end of body to unblock rendering -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '3623020937863541');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=3623020937863541&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+  <script src="js/invitaciones.js"></script>
 </body>
 </html>
