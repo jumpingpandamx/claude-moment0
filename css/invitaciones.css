@@ -234,6 +234,7 @@ em{font-style:italic;color:inherit}
 .footer__top i{width:20px;color:var(--sage)}
 .footer__bottom{border-top:1px solid rgba(246,243,236,.12);padding:20px 24px;text-align:center;font-size:.82rem;color:rgba(246,243,236,.65)}
 .footer__bottom a{text-decoration:underline;text-underline-offset:3px}
+.footer__note{max-width:720px;margin:0 auto 12px;font-size:.78rem;line-height:1.55;color:rgba(246,243,236,.6)}
 
 /* Animación de entrada */
 .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
