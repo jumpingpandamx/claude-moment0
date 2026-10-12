@@ -50,6 +50,31 @@
     })(performance.now());
   }
 
+  /* Paquetes: puntos del slider en móvil */
+  var track = document.querySelector('.packages');
+  var dots = document.getElementById('pkg-dots');
+  var cards = track.querySelectorAll('.pkg');
+  cards.forEach(function (card, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Ver paquete ' + card.querySelector('.pkg__name').textContent);
+    b.addEventListener('click', function () {
+      track.scrollTo({ left: card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+    });
+    dots.appendChild(b);
+  });
+  function syncDots() {
+    var mid = track.scrollLeft + track.clientWidth / 2, best = 0, bd = Infinity;
+    cards.forEach(function (card, i) {
+      var d = Math.abs(card.offsetLeft + card.offsetWidth / 2 - mid);
+      if (d < bd) { bd = d; best = i; }
+    });
+    dots.querySelectorAll('button').forEach(function (b, i) { b.classList.toggle('is-active', i === best); });
+  }
+  track.addEventListener('scroll', syncDots, { passive: true });
+  window.addEventListener('resize', syncDots);
+  syncDots();
+
   /* Comparativa de paquetes */
   var btn = document.getElementById('compare-btn');
   var table = document.getElementById('compare');
