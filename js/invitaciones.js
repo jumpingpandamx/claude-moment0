@@ -71,7 +71,12 @@
     });
     dots.querySelectorAll('button').forEach(function (b, i) { b.classList.toggle('is-active', i === best); });
   }
-  track.addEventListener('scroll', syncDots, { passive: true });
+  var ticking = false;
+  track.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { syncDots(); ticking = false; });
+  }, { passive: true });
   window.addEventListener('resize', syncDots);
   syncDots();
 
