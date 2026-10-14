@@ -21,34 +21,7 @@
     });
   });
 
-  /* Hero: la cuenta baja hasta 00:00:00:00 y aparece el logo */
-  var stage = document.getElementById('hero-stage');
-  var units = {};
-  stage.querySelectorAll('[data-unit]').forEach(function (el) { units[el.dataset.unit] = el; });
   function pad(n) { return String(n).padStart(2, '0'); }
-  function render(total) {
-    units.d.textContent = pad(Math.floor(total / 86400));
-    units.h.textContent = pad(Math.floor(total % 86400 / 3600));
-    units.m.textContent = pad(Math.floor(total % 3600 / 60));
-    units.s.textContent = pad(Math.floor(total % 60));
-  }
-  if (reduce) {
-    render(0);
-    stage.classList.add('is-done');
-  } else {
-    var START = 45 * 86400 + 6 * 3600 + 18 * 60 + 27; // 45:06:18:27
-    var DURATION = 3600; // ms
-    var t0 = null;
-    render(START);
-    (function tick(ts) {
-      if (t0 === null) t0 = ts;
-      var p = Math.min((ts - t0) / DURATION, 1);
-      var eased = 1 - Math.pow(p, 2.2);
-      render(Math.round(START * eased));
-      if (p < 1) requestAnimationFrame(tick);
-      else setTimeout(function () { stage.classList.add('is-done'); }, 350);
-    })(performance.now());
-  }
 
   /* Sliders en móvil (paquetes y demos): puntos de navegación */
   function initSlider(track, dots, itemSel, labelFn, startIndex) {
@@ -148,33 +121,86 @@
     if (show) table.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
   });
 
-  /* Mockup "Nos casamos": cuenta regresiva en vivo y botón de confirmar */
+  /* Mockup del hero: cuenta regresiva en vivo, selector de evento y confirmación */
+  var EVENTS = {
+    boda:    { kicker: 'Nos casamos',    names: 'Sofía <span>&amp;</span> Mateo', date: 'Sábado 14 de marzo · 6:00 pm',   acc: '#C8A97E', left: [42, 6, 18, 27] },
+    xv:      { kicker: 'Mis XV años',    names: 'Valentina',                       date: 'Sábado 22 de agosto · 7:00 pm', acc: '#D4577A', left: [67, 3, 41, 9] },
+    cumple:  { kicker: 'Celebramos',     names: 'Diego <span>30</span>',           date: 'Viernes 5 de junio · 8:00 pm',  acc: '#9CAF88', left: [23, 11, 5, 52] },
+    bautizo: { kicker: 'Mi bautizo',     names: 'Emma',                            date: 'Domingo 12 de abril · 1:00 pm', acc: '#8FA9C4', left: [88, 1, 30, 14] }
+  };
   var invCount = document.getElementById('inv-count');
+  var invBtn = document.getElementById('inv-btn');
+  var invBody = document.getElementById('inv-body');
+  var invScreen = document.getElementById('inv-screen');
+  var invPhone = document.getElementById('hero-phone');
   if (invCount) {
     var invEls = {};
     invCount.querySelectorAll('[data-u]').forEach(function (el) { invEls[el.dataset.u] = el; });
-    var invTarget = Date.now() + ((42 * 86400) + (6 * 3600) + (18 * 60) + 27) * 1000;
-    var invLast = {};
-    function invTick() {
+    var invTarget = 0, invLast = {};
+    function setTarget(l) { invTarget = Date.now() + (l[0] * 86400 + l[1] * 3600 + l[2] * 60 + l[3]) * 1000; }
+    function invTick(force) {
       var left = Math.max(0, Math.floor((invTarget - Date.now()) / 1000));
       var v = { d: Math.floor(left / 86400), h: Math.floor(left % 86400 / 3600), m: Math.floor(left % 3600 / 60), s: left % 60 };
       Object.keys(v).forEach(function (k) {
         var txt = pad(v[k]);
-        if (invLast[k] === txt) return;
+        if (!force && invLast[k] === txt) return;
         invLast[k] = txt;
         invEls[k].textContent = txt;
-        if (!reduce) { invEls[k].classList.remove('tick'); void invEls[k].offsetWidth; invEls[k].classList.add('tick'); }
+        if (!reduce && !force) { invEls[k].classList.remove('tick'); void invEls[k].offsetWidth; invEls[k].classList.add('tick'); }
       });
     }
-    invTick();
-    setInterval(invTick, 1000);
+    setTarget(EVENTS.boda.left);
+    invTick(true);
+    setInterval(function () { invTick(false); }, 1000);
+
+    function resetConfirm() {
+      invBtn.classList.remove('is-confirmed');
+      invBtn.setAttribute('aria-pressed', 'false');
+      invBtn.querySelector('.inv__btn-text').textContent = 'Confirmar asistencia';
+    }
+    function applyEvent(key) {
+      var ev = EVENTS[key];
+      document.getElementById('inv-kicker').textContent = ev.kicker;
+      document.getElementById('inv-names').innerHTML = ev.names;
+      document.getElementById('inv-date').textContent = ev.date;
+      invPhone.style.setProperty('--acc', ev.acc);
+      setTarget(ev.left);
+      invTick(true);
+      resetConfirm();
+    }
+    document.querySelectorAll('#evsw button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (b.classList.contains('is-active')) return;
+        document.querySelectorAll('#evsw button').forEach(function (o) {
+          var on = o === b;
+          o.classList.toggle('is-active', on);
+          o.setAttribute('aria-pressed', on);
+        });
+        if (reduce) { applyEvent(b.dataset.ev); return; }
+        invBody.classList.add('is-swap');
+        setTimeout(function () { applyEvent(b.dataset.ev); invBody.classList.remove('is-swap'); }, 220);
+      });
+    });
   }
-  var invBtn = document.getElementById('inv-btn');
   if (invBtn) {
     invBtn.addEventListener('click', function () {
       var on = invBtn.classList.toggle('is-confirmed');
       invBtn.querySelector('.inv__btn-text').textContent = on ? '¡Asistencia confirmada! ✓' : 'Confirmar asistencia';
       invBtn.setAttribute('aria-pressed', on);
+      if (on && !reduce) {
+        var colors = ['#9CAF88', '#C8A97E', '#2F3A33', getComputedStyle(invPhone).getPropertyValue('--acc').trim() || '#C8A97E'];
+        for (var i = 0; i < 18; i++) {
+          var p = document.createElement('span');
+          p.className = 'confetti';
+          p.style.background = colors[i % colors.length];
+          p.style.setProperty('--x', (Math.random() * 200 - 100) + 'px');
+          p.style.setProperty('--y', -(80 + Math.random() * 170) + 'px');
+          p.style.setProperty('--r', (Math.random() * 540 - 270) + 'deg');
+          p.style.animationDelay = (Math.random() * 0.1) + 's';
+          invScreen.appendChild(p);
+          setTimeout(function (el) { el.remove(); }.bind(null, p), 1400);
+        }
+      }
     });
   }
 

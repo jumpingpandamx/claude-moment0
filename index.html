@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/invitaciones.css?v=12" />
+  <link rel="stylesheet" href="css/invitaciones.css?v=14" />
 </head>
 <body>
 
@@ -53,55 +53,78 @@
 
   <!-- 1. HERO -->
   <section class="hero" id="inicio">
-    <div class="container hero__inner">
-      <div class="hero__stage" id="hero-stage">
-        <div class="countdown" id="hero-countdown" role="img" aria-label="Cuenta regresiva que llega a cero">
-          <div class="countdown__unit"><span data-unit="d">00</span><small>días</small></div>
-          <span class="countdown__sep">:</span>
-          <div class="countdown__unit"><span data-unit="h">00</span><small>horas</small></div>
-          <span class="countdown__sep">:</span>
-          <div class="countdown__unit"><span data-unit="m">00</span><small>min</small></div>
-          <span class="countdown__sep">:</span>
-          <div class="countdown__unit"><span data-unit="s">00</span><small>seg</small></div>
+    <div class="container hero2">
+      <div class="hero2__text">
+        <span class="label">Invitaciones digitales</span>
+        <h1 class="hero__title">Tu invitación, <em>en un solo link.</em></h1>
+        <p class="hero__sub">Cuenta regresiva, mapa y confirmaciones de asistencia. Lista en 15 días hábiles.</p>
+        <div class="hero__cta">
+          <a href="#demos" class="btn btn--forest">Ver demos</a>
+          <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20Moment0." class="btn btn--outline" target="_blank" rel="noopener noreferrer">Cotiza por WhatsApp</a>
         </div>
-        <img class="hero__logo" src="assets/logo.svg" alt="Moment0" width="360" height="100" />
+        <ul class="chips">
+          <li>Desde $999</li>
+          <li>Sin app que descargar</li>
+          <li>Se envía por WhatsApp</li>
+        </ul>
       </div>
-      <h1 class="hero__title">El momento en que <em>todo comienza.</em></h1>
-      <p class="hero__sub">Invitaciones digitales para tus eventos más importantes. Un link, todos los detalles, y tus invitados contando los días contigo.</p>
-      <div class="hero__cta">
-        <a href="#paquetes" class="btn btn--forest">Ver paquetes</a>
-        <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20Moment0." class="btn btn--outline" target="_blank" rel="noopener noreferrer">Cotiza por WhatsApp</a>
+      <div class="hero2__visual">
+        <div class="phone-wrap">
+          <div class="phone" id="hero-phone">
+            <div class="phone__notch"></div>
+            <div class="phone__screen" id="inv-screen">
+              <div class="inv__body" id="inv-body">
+                <p class="inv__kicker" id="inv-kicker">Nos casamos</p>
+                <p class="inv__names" id="inv-names">Sofía <span>&amp;</span> Mateo</p>
+                <p class="inv__date" id="inv-date">Sábado 14 de marzo · 6:00 pm</p>
+                <div class="inv__count" id="inv-count" aria-hidden="true">
+                  <div><b data-u="d">42</b><small>días</small></div>
+                  <div><b data-u="h">06</b><small>horas</small></div>
+                  <div><b data-u="m">18</b><small>min</small></div>
+                  <div><b data-u="s">27</b><small>seg</small></div>
+                </div>
+                <div class="inv__row"><i class="fa-solid fa-location-dot"></i> Cómo llegar</div>
+                <div class="inv__row"><i class="fa-solid fa-calendar-plus"></i> Agregar al calendario</div>
+                <div class="inv__row"><i class="fa-solid fa-gift"></i> Mesa de regalos</div>
+                <div class="inv__row"><i class="fa-solid fa-images"></i> Fotos del evento</div>
+              </div>
+              <button type="button" class="inv__btn" id="inv-btn"><span class="inv__btn-text">Confirmar asistencia</span></button>
+              <div class="env" aria-hidden="true"><span class="env__flap"></span><span class="env__seal">M0</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="evsw__label">Pruébala con tu evento</p>
+        <div class="evsw" id="evsw" role="group" aria-label="Elige un tipo de evento">
+          <button type="button" data-ev="boda" class="is-active" aria-pressed="true">Boda</button>
+          <button type="button" data-ev="xv" aria-pressed="false">XV años</button>
+          <button type="button" data-ev="cumple" aria-pressed="false">Cumpleaños</button>
+          <button type="button" data-ev="bautizo" aria-pressed="false">Bautizo</button>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 2. QUÉ ES -->
   <section class="section section--white" id="que-es">
-    <div class="container split">
-      <div class="split__text reveal">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
         <span class="label">¿Qué es?</span>
-        <h2 class="section-title">Tu invitación, en un link</h2>
-        <p>Olvídate de imprimir, repartir y preguntar quién sí va. Tu invitación llega por WhatsApp y se abre como una página hecha solo para tu evento: con la ubicación, la cuenta regresiva, la confirmación de asistencia y todos los detalles en un solo lugar.</p>
+        <h2 class="section-title">Todo tu evento, en un link</h2>
       </div>
-      <div class="split__visual reveal">
-        <div class="phone">
-          <div class="phone__notch"></div>
-          <div class="phone__screen">
-            <p class="inv__kicker">Nos casamos</p>
-            <p class="inv__names">Sofía <span>&amp;</span> Mateo</p>
-            <p class="inv__date">Sábado 14 de marzo · 6:00 pm</p>
-            <div class="inv__count" id="inv-count" aria-hidden="true">
-              <div><b data-u="d">42</b><small>días</small></div>
-              <div><b data-u="h">06</b><small>horas</small></div>
-              <div><b data-u="m">18</b><small>min</small></div>
-              <div><b data-u="s">27</b><small>seg</small></div>
-            </div>
-            <div class="inv__row"><i class="fa-solid fa-location-dot"></i> Cómo llegar</div>
-            <div class="inv__row"><i class="fa-solid fa-calendar-plus"></i> Agregar al calendario</div>
-            <button type="button" class="inv__btn" id="inv-btn"><span class="inv__btn-text">Confirmar asistencia</span></button>
-          </div>
-        </div>
-      </div>
+      <ul class="steps">
+        <li class="step reveal">
+          <span class="step__icon"><i class="fa-solid fa-link"></i></span>
+          <p><strong>Todo en un solo lugar.</strong> Fecha, ubicación, cuenta regresiva y detalles.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__icon"><i class="fa-solid fa-circle-check"></i></span>
+          <p><strong>Confirmaciones al instante.</strong> Tus invitados responden desde su celular.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__icon"><i class="fa-brands fa-whatsapp"></i></span>
+          <p><strong>Sin imprimir ni descargar.</strong> Lo compartes por WhatsApp y listo.</p>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -421,6 +444,6 @@
     </div>
   </footer>
 
-  <script src="js/invitaciones.js?v=10"></script>
+  <script src="js/invitaciones.js?v=11"></script>
 </body>
 </html>
