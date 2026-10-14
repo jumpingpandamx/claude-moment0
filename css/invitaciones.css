@@ -485,3 +485,6 @@ em{font-style:italic;color:inherit}
 .event__link{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:100%;height:100%;padding:16px;text-align:center}
 .event:has(>.event__link){padding:0}
 .event:has(>.event__link):hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(47,58,51,.12)}
+.mini--comunion{--mbg:#FFFDF8;--mink:#3a3326;--macc:#C8A97E;--mcard:#fff;--mline:rgba(200,169,126,.45);--mrad:10px;--mbtn:#2F3A33}
+.mini--comunion .mini__photo{width:calc(100% - 0em);height:9.5em;margin:1.3em 0 .3em;border-radius:1em 1em .4em .4em}
+.mini--comunion .mini__name{font-size:1.9em}
