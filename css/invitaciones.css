@@ -449,3 +449,9 @@ em{font-style:italic;color:inherit}
 .demo__phone>.mini{height:100%;min-height:0}
 .mini--boda .mini__name{font-size:1.7em}
 .mini--boda .mini__photo{height:11.5em}
+
+/* Cumpleaños infantil */
+#hero-phone[data-theme=cumple]{--rad:16px;--ncase:none;--nsize:2.6rem}
+#hero-phone[data-theme=cumple] .inv__chips{justify-content:flex-start}
+.mini--cumple{--mrad:12px}
+.mini--cumple .mini__name{text-transform:none;font-size:2.1em}

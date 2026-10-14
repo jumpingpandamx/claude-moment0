@@ -172,19 +172,22 @@
       }
     },
     cumple: {
-      acc: '#E8643C', left: [23, 11, 5, 52], ok: function () { return '¡Ahí estaré! ✓'; },
+      acc: '#E8643C', left: [23, 11, 5, 52], ok: function () { return '¡Nos vemos en la fiesta! ✓'; },
       html: function () {
-        return '<div class="inv__photo inv__photo--wide"><img src="assets/demo/cumple.jpg" alt="" width="640" height="427" decoding="async" /></div><p class="inv__kicker">Celebramos</p>' +
-          '<p class="inv__names">Diego <span>30</span></p><p class="inv__date">Viernes 5 de junio · 8:00 pm</p>' + cnt('inv__count--plain') +
-          '<p class="inv__h">¿Qué llevas?</p><ul class="inv__todo">' +
-          ['Pastel', 'Bebidas', 'Botanas'].map(function (t) { return '<li><button type="button" aria-pressed="false"><i class="fa-regular fa-circle"></i><span>' + t + '</span><em>Lo llevo yo</em></button></li>'; }).join('') + '</ul>';
+        return '<div class="inv__photo inv__photo--wide"><img src="assets/demo/cumple.jpg" alt="" width="640" height="427" decoding="async" /></div><p class="inv__kicker">¡Mi cumple!</p>' +
+          '<p class="inv__names">Santi <span>5</span></p><p class="inv__date">Sábado 6 de junio · 4:00 pm</p>' + cnt('inv__count--plain') +
+          '<p class="inv__h">Alergias de tu peque</p><div class="inv__chips inv__chips--multi">' +
+          ['Ninguna', 'Nueces', 'Lácteos', 'Gluten'].map(function (t) { return '<button type="button" aria-pressed="false">' + t + '</button>'; }).join('') + '</div>';
       },
       bind: function (root) {
-        root.querySelectorAll('.inv__todo button').forEach(function (b) {
+        var chips = root.querySelectorAll('.inv__chips button');
+        chips.forEach(function (b, i) {
           b.addEventListener('click', function () {
-            var on = b.classList.toggle('is-on');
+            var on = !b.classList.contains('is-on');
+            if (i === 0 && on) chips.forEach(function (o) { o.classList.remove('is-on'); o.setAttribute('aria-pressed', 'false'); });
+            if (i !== 0 && on) { chips[0].classList.remove('is-on'); chips[0].setAttribute('aria-pressed', 'false'); }
+            b.classList.toggle('is-on', on);
             b.setAttribute('aria-pressed', on);
-            b.querySelector('i').className = on ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle';
           });
         });
       }
