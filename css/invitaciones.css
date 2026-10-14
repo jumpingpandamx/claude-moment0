@@ -423,3 +423,29 @@ em{font-style:italic;color:inherit}
 .wa-float:hover{transform:scale(1.08);box-shadow:0 12px 28px rgba(0,0,0,.3)}
 @keyframes waPulse{0%{box-shadow:0 8px 22px rgba(0,0,0,.25),0 0 0 0 rgba(37,211,102,.55)}70%,100%{box-shadow:0 8px 22px rgba(0,0,0,.25),0 0 0 16px rgba(37,211,102,0)}}
 @media(prefers-reduced-motion:reduce){.wa-float{animation:none}}
+
+/* Vistas previas en miniatura (demos) */
+.demo__phone>.mini{display:flex;flex-direction:column;align-items:center;gap:.6em;font-size:11px;text-align:center;position:relative;overflow:hidden;padding:0 1.1em 1.3em;background:var(--mbg);color:var(--mink)}
+.mini__photo{flex:none;width:calc(100% + 2.2em);height:11.5em;margin:0 -1.1em .3em;background-size:cover;background-position:center}
+.mini__kicker{font-size:.58em;letter-spacing:.22em;text-transform:uppercase;opacity:.65}
+.mini__name{font-family:var(--serif);font-size:2.1em;line-height:1.05}
+.mini__name em{color:var(--macc);font-style:italic}
+.mini__date{font-size:.62em;opacity:.7}
+.mini__count{display:flex;gap:.35em;margin:.2em 0}
+.mini__count i{font-style:normal;background:var(--mcard);border:1px solid var(--mline);border-radius:var(--mrad);padding:.45em .1em;width:3.6em}
+.mini__count b{display:block;font-family:var(--serif);font-size:1.15em;line-height:1.1}
+.mini__count u{text-decoration:none;font-size:.5em;letter-spacing:.1em;text-transform:uppercase;opacity:.65}
+.mini__row{width:100%;background:var(--mcard);border:1px solid var(--mline);border-radius:var(--mrad);padding:.55em .8em;font-size:.62em;text-align:left}
+.mini__btn{margin-top:auto;width:100%;background:var(--macc);color:var(--mbtn,#fff);border-radius:30px;padding:.7em;font-size:.62em;font-weight:600}
+.mini--cumple{--mbg:#FFF1CC;--mink:#2b2118;--macc:#E8643C;--mcard:#fff;--mline:rgba(232,100,60,.35);--mrad:5px;--mbtn:#fff}
+.mini--cumple .mini__photo{width:100%;margin:1.3em 0 .3em;height:8.5em;border-radius:6px}
+.mini--cumple .mini__name{font-family:var(--sans);font-weight:800;text-transform:uppercase;font-size:1.8em}
+.mini--bautizo{--mbg:linear-gradient(180deg,#EAF3FA,#fff 85%);--mink:#2c4156;--macc:#6F93B5;--mcard:rgba(255,255,255,.9);--mline:rgba(143,169,196,.5);--mrad:12px}
+.mini--bautizo .mini__photo{width:8em;height:9.6em;margin:1.4em 0 .3em;border-radius:4em 4em .4em .4em;background-position:35% 50%}
+.mini--boda{--mbg:var(--ivory);--mink:var(--forest);--macc:var(--forest);--mcard:#fff;--mline:rgba(47,58,51,.14);--mrad:8px;--mbtn:var(--ivory)}
+.mini--boda .mini__name em{color:var(--sand)}
+.mini--boda .mini__photo{height:13em}
+.demo__phone:has(>.mini){contain:size}
+.demo__phone>.mini{height:100%;min-height:0}
+.mini--boda .mini__name{font-size:1.7em}
+.mini--boda .mini__photo{height:11.5em}
