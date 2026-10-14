@@ -313,6 +313,7 @@ em{font-style:italic;color:inherit}
   .phone-wrap{animation:none}
   .env{display:none}
   .inv__body{transition:none}
+  .inv__songs li.is-new,.inv__sent.pop{animation:none}
   .inv__count b.tick{animation:none}
   .demo__phone--live,.xv__env,.xv__tap,.xv__star,.demo__badge i{animation:none}
 }
@@ -355,3 +356,53 @@ em{font-style:italic;color:inherit}
 #hero-phone[data-theme=cumple]{--bg:#FFF1CC;--ink:#2b2118;--mut:#6b5a45;--card:#fff;--cline:rgba(232,100,60,.35);--btn:#E8643C;--btntx:#fff;--btnok:#2b2118;--nfont:var(--sans);--nsize:2.3rem;--nweight:800;--ncase:uppercase;--cfont:var(--sans);--rad:6px}
 #hero-phone[data-theme=bautizo]{--bg:linear-gradient(180deg,#EAF3FA,#fff 80%);--ink:#2c4156;--mut:#6b8296;--card:rgba(255,255,255,.85);--cline:rgba(143,169,196,.5);--btn:#6F93B5;--btntx:#fff;--btnok:#fff;--nsize:2.4rem;--rad:18px}
 #hero-phone[data-theme=cumple] .inv__names span{font-style:normal}
+
+/* Variantes de diseño y funciones por evento */
+.inv__h{font-size:.64rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mut,var(--muted));margin-top:2px}
+.inv__count--plain{gap:14px}
+.inv__count--plain div{background:none;border:0;padding:0;min-width:0}
+.inv__count--plain b{font-size:1.45rem}
+.inv__count--round div{border-radius:50%;width:54px;height:54px;min-width:0;padding:0;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.inv__count--round b{font-size:1.05rem}
+.inv__count--round small{font-size:.5rem}
+/* Boda */
+.inv__tl{width:100%;text-align:left;font-size:.74rem;border-left:1.5px solid var(--acc);margin:2px 0 2px 10px;padding-left:14px;display:flex;flex-direction:column;gap:8px}
+.inv__tl li{position:relative}
+.inv__tl li::before{content:'';position:absolute;left:-19.5px;top:.45em;width:7px;height:7px;border-radius:50%;background:var(--acc)}
+.inv__tl b{display:inline-block;min-width:58px;font-weight:600}
+.inv__step{width:100%;display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--cline,var(--line));border-radius:var(--rad,10px);padding:6px 6px 6px 12px;font-size:.74rem}
+.inv__step div{display:flex;align-items:center;gap:10px}
+.inv__step button{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--ivory);color:var(--forest);font-size:1rem;line-height:1;cursor:pointer}
+.inv__step b{min-width:12px;font-variant-numeric:tabular-nums}
+/* XV */
+.inv__mono{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--acc);display:grid;place-items:center;font:italic 1.6rem/1 var(--serif);color:var(--acc)}
+.inv__song{width:100%;text-align:left;display:flex;flex-direction:column;gap:6px}
+.inv__form{display:flex;gap:6px}
+.inv__form input{flex:1;min-width:0;font:inherit;font-size:.74rem;padding:8px 12px;border-radius:30px;border:1px solid var(--cline);background:var(--card);color:inherit}
+.inv__form input::placeholder{color:var(--mut)}
+.inv__form button{flex:none;width:32px;height:32px;border-radius:50%;border:0;background:var(--acc);color:#fff;cursor:pointer}
+.inv__songs{display:flex;flex-direction:column;gap:5px;font-size:.72rem}
+.inv__songs li{background:var(--card);border:1px solid var(--cline);border-radius:30px;padding:6px 12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.inv__songs i{color:var(--acc);margin-right:6px}
+.inv__songs li.is-new{animation:rise .35s ease}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+/* Cumpleaños */
+#hero-phone[data-theme=cumple] .inv__body{align-items:flex-start;text-align:left}
+#hero-phone[data-theme=cumple] .inv__names span{color:var(--acc)}
+#hero-phone[data-theme=cumple] .inv__count--plain b{font-weight:800}
+#hero-phone[data-theme=cumple] .inv__count--plain div:first-child b{font-size:2.6rem;color:var(--acc);line-height:1}
+.inv__todo{width:100%;display:flex;flex-direction:column;gap:6px}
+.inv__todo button{width:100%;display:flex;align-items:center;gap:10px;font:inherit;font-size:.78rem;text-align:left;padding:8px 12px;border-radius:var(--rad);border:1px solid var(--cline);background:var(--card);color:inherit;cursor:pointer;transition:var(--ease)}
+.inv__todo button i{color:var(--acc)}
+.inv__todo button span{flex:1;font-weight:600}
+.inv__todo button em{font-style:normal;font-size:.64rem;opacity:0;transition:opacity .2s}
+.inv__todo button.is-on{background:var(--acc);border-color:var(--acc);color:#fff}
+.inv__todo button.is-on i{color:#fff}
+.inv__todo button.is-on em{opacity:1}
+/* Bautizo */
+.inv__arch{width:78px;height:92px;border-radius:40px 40px 6px 6px;background:linear-gradient(180deg,#cfe0ef,#eef5fb);border:1.5px solid var(--cline);display:grid;place-items:center;color:var(--acc);font-size:1.7rem}
+.inv__chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.inv__chips button{font:inherit;font-size:.7rem;padding:7px 12px;border-radius:30px;border:1px solid var(--cline);background:var(--card);color:inherit;cursor:pointer;transition:var(--ease)}
+.inv__chips button.is-on{background:var(--acc);border-color:var(--acc);color:#fff}
+.inv__sent{min-height:1.3em;font-size:.72rem;color:var(--acc);font-weight:600}
+.inv__sent.pop{animation:rise .35s ease}

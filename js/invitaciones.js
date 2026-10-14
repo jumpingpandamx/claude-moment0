@@ -121,27 +121,107 @@
     if (show) table.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
   });
 
-  /* Mockup del hero: cuenta regresiva en vivo, selector de evento y confirmación */
+  /* Mockup del hero: cada evento con su propio diseño y su propia función */
+  function cnt(cls) {
+    return '<div class="inv__count ' + cls + '" aria-hidden="true">' +
+      '<div><b data-u="d">00</b><small>días</small></div><div><b data-u="h">00</b><small>horas</small></div>' +
+      '<div><b data-u="m">00</b><small>min</small></div><div><b data-u="s">00</b><small>seg</small></div></div>';
+  }
   var EVENTS = {
-    boda:    { icon: 'ring', kicker: 'Nos casamos',    names: 'Sofía <span>&amp;</span> Mateo', date: 'Sábado 14 de marzo · 6:00 pm',   acc: '#C8A97E', left: [42, 6, 18, 27] },
-    xv:      { icon: 'crown', kicker: 'Mis XV años',    names: 'Valentina',                       date: 'Sábado 22 de agosto · 7:00 pm', acc: '#D4577A', left: [67, 3, 41, 9] },
-    cumple:  { icon: 'cake-candles', kicker: 'Celebramos',     names: 'Diego <span>30</span>',           date: 'Viernes 5 de junio · 8:00 pm',  acc: '#E8643C', left: [23, 11, 5, 52] },
-    bautizo: { icon: 'dove', kicker: 'Mi bautizo',     names: 'Emma',                            date: 'Domingo 12 de abril · 1:00 pm', acc: '#8FA9C4', left: [88, 1, 30, 14] }
+    boda: {
+      acc: '#C8A97E', left: [42, 6, 18, 27], ok: function (s) { return s.guests === 1 ? '¡1 lugar confirmado! ✓' : '¡' + s.guests + ' lugares confirmados! ✓'; },
+      html: function () {
+        return '<i class="inv__deco fa-solid fa-ring" aria-hidden="true"></i><p class="inv__kicker">Nos casamos</p>' +
+          '<p class="inv__names">Sofía <span>&amp;</span> Mateo</p><p class="inv__date">Sábado 14 de marzo · 6:00 pm</p>' + cnt('') +
+          '<ul class="inv__tl"><li><b>6:00 pm</b> Ceremonia</li><li><b>8:00 pm</b> Recepción</li><li><b>11:00 pm</b> Baile</li></ul>' +
+          '<div class="inv__step"><span>Lugares</span><div><button type="button" data-d="-1" aria-label="Quitar un lugar">−</button><b id="inv-n">1</b><button type="button" data-d="1" aria-label="Agregar un lugar">+</button></div></div>';
+      },
+      bind: function (root, s) {
+        var n = root.querySelector('#inv-n');
+        root.querySelectorAll('.inv__step button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            s.guests = Math.min(6, Math.max(1, s.guests + Number(b.dataset.d)));
+            n.textContent = s.guests;
+            if (invBtn.classList.contains('is-confirmed')) invBtn.querySelector('.inv__btn-text').textContent = EVENTS.boda.ok(s);
+          });
+        });
+      }
+    },
+    xv: {
+      acc: '#D4577A', left: [67, 3, 41, 9], ok: function () { return '¡Nos vemos en mi fiesta! ✓'; },
+      html: function () {
+        return '<div class="inv__mono" aria-hidden="true">V</div><p class="inv__kicker">Mis XV años</p><p class="inv__names">Valentina</p>' +
+          '<p class="inv__date">Sábado 22 de agosto · 7:00 pm</p>' + cnt('inv__count--round') +
+          '<div class="inv__song"><p class="inv__h">Pide tu canción</p><form class="inv__form"><input type="text" maxlength="26" placeholder="Escribe una canción…" aria-label="Canción" /><button type="submit" aria-label="Agregar canción"><i class="fa-solid fa-plus"></i></button></form>' +
+          '<ul class="inv__songs"><li><i class="fa-solid fa-music"></i> Vals de los XV</li></ul></div>';
+      },
+      bind: function (root) {
+        var form = root.querySelector('.inv__form'), list = root.querySelector('.inv__songs');
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var inp = form.querySelector('input'), v = inp.value.trim();
+          if (!v) return;
+          var li = document.createElement('li');
+          li.innerHTML = '<i class="fa-solid fa-music"></i> ';
+          li.appendChild(document.createTextNode(v));
+          li.className = 'is-new';
+          list.appendChild(li);
+          while (list.children.length > 3) list.removeChild(list.firstChild);
+          inp.value = '';
+        });
+      }
+    },
+    cumple: {
+      acc: '#E8643C', left: [23, 11, 5, 52], ok: function () { return '¡Ahí estaré! ✓'; },
+      html: function () {
+        return '<i class="inv__deco fa-solid fa-cake-candles" aria-hidden="true"></i><p class="inv__kicker">Celebramos</p>' +
+          '<p class="inv__names">Diego <span>30</span></p><p class="inv__date">Viernes 5 de junio · 8:00 pm</p>' + cnt('inv__count--plain') +
+          '<p class="inv__h">¿Qué llevas?</p><ul class="inv__todo">' +
+          ['Pastel', 'Bebidas', 'Botanas', 'Hielos'].map(function (t) { return '<li><button type="button" aria-pressed="false"><i class="fa-regular fa-circle"></i><span>' + t + '</span><em>Lo llevo yo</em></button></li>'; }).join('') + '</ul>';
+      },
+      bind: function (root) {
+        root.querySelectorAll('.inv__todo button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            var on = b.classList.toggle('is-on');
+            b.setAttribute('aria-pressed', on);
+            b.querySelector('i').className = on ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle';
+          });
+        });
+      }
+    },
+    bautizo: {
+      acc: '#6F93B5', left: [88, 1, 30, 14], ok: function () { return '¡Con gusto asistiré! ✓'; },
+      html: function () {
+        return '<div class="inv__arch" aria-hidden="true"><i class="fa-solid fa-dove"></i></div><p class="inv__kicker">Mi bautizo</p><p class="inv__names">Emma</p>' +
+          '<p class="inv__date">Domingo 12 de abril · 1:00 pm</p>' + cnt('inv__count--plain') +
+          '<p class="inv__h">Deja una bendición</p><div class="inv__chips">' +
+          ['Dios te bendiga', 'Felicidades', 'Con mucho cariño'].map(function (t) { return '<button type="button">' + t + '</button>'; }).join('') +
+          '</div><p class="inv__sent" aria-live="polite"></p>';
+      },
+      bind: function (root) {
+        var sent = root.querySelector('.inv__sent');
+        root.querySelectorAll('.inv__chips button').forEach(function (b) {
+          b.addEventListener('click', function () {
+            root.querySelectorAll('.inv__chips button').forEach(function (o) { o.classList.toggle('is-on', o === b); });
+            sent.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviado: “' + b.textContent + '”';
+            sent.classList.remove('pop'); void sent.offsetWidth; sent.classList.add('pop');
+          });
+        });
+      }
+    }
   };
-  var invCount = document.getElementById('inv-count');
   var invBtn = document.getElementById('inv-btn');
   var invBody = document.getElementById('inv-body');
   var invScreen = document.getElementById('inv-screen');
   var invPhone = document.getElementById('hero-phone');
-  if (invCount) {
-    var invEls = {};
-    invCount.querySelectorAll('[data-u]').forEach(function (el) { invEls[el.dataset.u] = el; });
-    var invTarget = 0, invLast = {};
+  if (invBody) {
+    var invEls = {}, invTarget = 0, invLast = {}, state = { guests: 1, ev: 'boda' };
     function setTarget(l) { invTarget = Date.now() + (l[0] * 86400 + l[1] * 3600 + l[2] * 60 + l[3]) * 1000; }
     function invTick(force) {
       var left = Math.max(0, Math.floor((invTarget - Date.now()) / 1000));
       var v = { d: Math.floor(left / 86400), h: Math.floor(left % 86400 / 3600), m: Math.floor(left % 3600 / 60), s: left % 60 };
       Object.keys(v).forEach(function (k) {
+        if (!invEls[k]) return;
         var txt = pad(v[k]);
         if (!force && invLast[k] === txt) return;
         invLast[k] = txt;
@@ -149,10 +229,6 @@
         if (!reduce && !force) { invEls[k].classList.remove('tick'); void invEls[k].offsetWidth; invEls[k].classList.add('tick'); }
       });
     }
-    setTarget(EVENTS.boda.left);
-    invTick(true);
-    setInterval(function () { invTick(false); }, 1000);
-
     function resetConfirm() {
       invBtn.classList.remove('is-confirmed');
       invBtn.setAttribute('aria-pressed', 'false');
@@ -160,16 +236,19 @@
     }
     function applyEvent(key) {
       var ev = EVENTS[key];
-      document.getElementById('inv-kicker').textContent = ev.kicker;
-      document.getElementById('inv-names').innerHTML = ev.names;
-      document.getElementById('inv-date').textContent = ev.date;
+      state.ev = key; state.guests = 1;
+      invBody.innerHTML = ev.html();
+      ev.bind(invBody, state);
+      invEls = {}; invLast = {};
+      invBody.querySelectorAll('[data-u]').forEach(function (el) { invEls[el.dataset.u] = el; });
       invPhone.style.setProperty('--acc', ev.acc);
       invPhone.dataset.theme = key;
-      document.getElementById('inv-deco').className = 'inv__deco fa-solid fa-' + ev.icon;
       setTarget(ev.left);
       invTick(true);
       resetConfirm();
     }
+    applyEvent('boda');
+    setInterval(function () { invTick(false); }, 1000);
     document.querySelectorAll('#evsw button').forEach(function (b) {
       b.addEventListener('click', function () {
         if (b.classList.contains('is-active')) return;
@@ -187,7 +266,7 @@
   if (invBtn) {
     invBtn.addEventListener('click', function () {
       var on = invBtn.classList.toggle('is-confirmed');
-      invBtn.querySelector('.inv__btn-text').textContent = on ? '¡Asistencia confirmada! ✓' : 'Confirmar asistencia';
+      invBtn.querySelector('.inv__btn-text').textContent = on ? EVENTS[state.ev].ok(state) : 'Confirmar asistencia';
       invBtn.setAttribute('aria-pressed', on);
       if (on && !reduce) {
         var colors = ['#9CAF88', '#C8A97E', '#2F3A33', getComputedStyle(invPhone).getPropertyValue('--acc').trim() || '#C8A97E'];
