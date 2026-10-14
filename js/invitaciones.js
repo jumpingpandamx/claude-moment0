@@ -57,7 +57,7 @@
   initSlider(document.querySelector('.packages'), document.getElementById('pkg-dots'), '.pkg',
     function (c) { return 'Ver paquete ' + c.querySelector('.pkg__name').textContent; });
   initSlider(document.querySelector('.demos'), document.getElementById('demo-dots'), '.demo',
-    function (c) { return 'Ver demo ' + c.querySelector('.demo__link b').textContent; }, 2);
+    function (c) { return c.dataset.label; }, 2);
 
   /* Comparativa en móvil: un paquete a la vez, armado desde la misma tabla */
   (function () {
