@@ -123,10 +123,10 @@
 
   /* Mockup del hero: cuenta regresiva en vivo, selector de evento y confirmación */
   var EVENTS = {
-    boda:    { kicker: 'Nos casamos',    names: 'Sofía <span>&amp;</span> Mateo', date: 'Sábado 14 de marzo · 6:00 pm',   acc: '#C8A97E', left: [42, 6, 18, 27] },
-    xv:      { kicker: 'Mis XV años',    names: 'Valentina',                       date: 'Sábado 22 de agosto · 7:00 pm', acc: '#D4577A', left: [67, 3, 41, 9] },
-    cumple:  { kicker: 'Celebramos',     names: 'Diego <span>30</span>',           date: 'Viernes 5 de junio · 8:00 pm',  acc: '#9CAF88', left: [23, 11, 5, 52] },
-    bautizo: { kicker: 'Mi bautizo',     names: 'Emma',                            date: 'Domingo 12 de abril · 1:00 pm', acc: '#8FA9C4', left: [88, 1, 30, 14] }
+    boda:    { icon: 'ring', kicker: 'Nos casamos',    names: 'Sofía <span>&amp;</span> Mateo', date: 'Sábado 14 de marzo · 6:00 pm',   acc: '#C8A97E', left: [42, 6, 18, 27] },
+    xv:      { icon: 'crown', kicker: 'Mis XV años',    names: 'Valentina',                       date: 'Sábado 22 de agosto · 7:00 pm', acc: '#D4577A', left: [67, 3, 41, 9] },
+    cumple:  { icon: 'cake-candles', kicker: 'Celebramos',     names: 'Diego <span>30</span>',           date: 'Viernes 5 de junio · 8:00 pm',  acc: '#E8643C', left: [23, 11, 5, 52] },
+    bautizo: { icon: 'dove', kicker: 'Mi bautizo',     names: 'Emma',                            date: 'Domingo 12 de abril · 1:00 pm', acc: '#8FA9C4', left: [88, 1, 30, 14] }
   };
   var invCount = document.getElementById('inv-count');
   var invBtn = document.getElementById('inv-btn');
@@ -164,6 +164,8 @@
       document.getElementById('inv-names').innerHTML = ev.names;
       document.getElementById('inv-date').textContent = ev.date;
       invPhone.style.setProperty('--acc', ev.acc);
+      invPhone.dataset.theme = key;
+      document.getElementById('inv-deco').className = 'inv__deco fa-solid fa-' + ev.icon;
       setTarget(ev.left);
       invTick(true);
       resetConfirm();
