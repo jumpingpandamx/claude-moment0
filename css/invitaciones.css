@@ -406,3 +406,14 @@ em{font-style:italic;color:inherit}
 .inv__chips button.is-on{background:var(--acc);border-color:var(--acc);color:#fff}
 .inv__sent{min-height:1.3em;font-size:.72rem;color:var(--acc);font-weight:600}
 .inv__sent.pop{animation:rise .35s ease}
+
+/* Fotos dentro de la invitación */
+.inv__photo{width:100%;overflow:hidden;flex:none}
+.inv__photo img{display:block;width:100%;height:100%;object-fit:cover}
+.inv__photo--banner{position:relative;height:150px;width:calc(100% + 40px);margin:-50px -20px 0}
+.inv__photo--banner::after{content:'';position:absolute;inset:auto 0 0 0;height:60px;background:linear-gradient(transparent,var(--bg,var(--ivory)))}
+.inv__photo--round{width:76px;height:76px;border-radius:50%;border:2px solid var(--acc);padding:3px;background:transparent}
+.inv__photo--round img{border-radius:50%}
+.inv__photo--wide{height:74px;border-radius:var(--rad,10px);margin-bottom:2px}
+.inv__arch{overflow:hidden;width:98px;height:120px;padding:0}
+.inv__arch img{width:100%;height:100%;object-fit:cover;object-position:35% 50%}

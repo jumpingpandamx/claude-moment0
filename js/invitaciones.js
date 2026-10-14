@@ -131,7 +131,7 @@
     boda: {
       acc: '#C8A97E', left: [42, 6, 18, 27], ok: function (s) { return s.guests === 1 ? '¡1 lugar confirmado! ✓' : '¡' + s.guests + ' lugares confirmados! ✓'; },
       html: function () {
-        return '<i class="inv__deco fa-solid fa-ring" aria-hidden="true"></i><p class="inv__kicker">Nos casamos</p>' +
+        return '<div class="inv__photo inv__photo--banner"><img src="assets/demo/boda.jpg" alt="" width="640" height="427" decoding="async" /></div><p class="inv__kicker">Nos casamos</p>' +
           '<p class="inv__names">Sofía <span>&amp;</span> Mateo</p><p class="inv__date">Sábado 14 de marzo · 6:00 pm</p>' + cnt('') +
           '<ul class="inv__tl"><li><b>6:00 pm</b> Ceremonia</li><li><b>8:00 pm</b> Recepción</li><li><b>11:00 pm</b> Baile</li></ul>' +
           '<div class="inv__step"><span>Lugares</span><div><button type="button" data-d="-1" aria-label="Quitar un lugar">−</button><b id="inv-n">1</b><button type="button" data-d="1" aria-label="Agregar un lugar">+</button></div></div>';
@@ -150,7 +150,7 @@
     xv: {
       acc: '#D4577A', left: [67, 3, 41, 9], ok: function () { return '¡Nos vemos en mi fiesta! ✓'; },
       html: function () {
-        return '<div class="inv__mono" aria-hidden="true">V</div><p class="inv__kicker">Mis XV años</p><p class="inv__names">Valentina</p>' +
+        return '<div class="inv__photo inv__photo--round"><img src="assets/demo/xv.jpg" alt="" width="640" height="427" decoding="async" /></div><p class="inv__kicker">Mis XV años</p><p class="inv__names">Valentina</p>' +
           '<p class="inv__date">Sábado 22 de agosto · 7:00 pm</p>' + cnt('inv__count--round') +
           '<div class="inv__song"><p class="inv__h">Pide tu canción</p><form class="inv__form"><input type="text" maxlength="26" placeholder="Escribe una canción…" aria-label="Canción" /><button type="submit" aria-label="Agregar canción"><i class="fa-solid fa-plus"></i></button></form>' +
           '<ul class="inv__songs"><li><i class="fa-solid fa-music"></i> Vals de los XV</li></ul></div>';
@@ -174,10 +174,10 @@
     cumple: {
       acc: '#E8643C', left: [23, 11, 5, 52], ok: function () { return '¡Ahí estaré! ✓'; },
       html: function () {
-        return '<i class="inv__deco fa-solid fa-cake-candles" aria-hidden="true"></i><p class="inv__kicker">Celebramos</p>' +
+        return '<div class="inv__photo inv__photo--wide"><img src="assets/demo/cumple.jpg" alt="" width="640" height="427" decoding="async" /></div><p class="inv__kicker">Celebramos</p>' +
           '<p class="inv__names">Diego <span>30</span></p><p class="inv__date">Viernes 5 de junio · 8:00 pm</p>' + cnt('inv__count--plain') +
           '<p class="inv__h">¿Qué llevas?</p><ul class="inv__todo">' +
-          ['Pastel', 'Bebidas', 'Botanas', 'Hielos'].map(function (t) { return '<li><button type="button" aria-pressed="false"><i class="fa-regular fa-circle"></i><span>' + t + '</span><em>Lo llevo yo</em></button></li>'; }).join('') + '</ul>';
+          ['Pastel', 'Bebidas', 'Botanas'].map(function (t) { return '<li><button type="button" aria-pressed="false"><i class="fa-regular fa-circle"></i><span>' + t + '</span><em>Lo llevo yo</em></button></li>'; }).join('') + '</ul>';
       },
       bind: function (root) {
         root.querySelectorAll('.inv__todo button').forEach(function (b) {
@@ -192,7 +192,7 @@
     bautizo: {
       acc: '#6F93B5', left: [88, 1, 30, 14], ok: function () { return '¡Con gusto asistiré! ✓'; },
       html: function () {
-        return '<div class="inv__arch" aria-hidden="true"><i class="fa-solid fa-dove"></i></div><p class="inv__kicker">Mi bautizo</p><p class="inv__names">Emma</p>' +
+        return '<div class="inv__arch" aria-hidden="true"><img src="assets/demo/bautizo.jpg" alt="" width="640" height="427" decoding="async" /></div><p class="inv__kicker">Mi bautizo</p><p class="inv__names">Emma</p>' +
           '<p class="inv__date">Domingo 12 de abril · 1:00 pm</p>' + cnt('inv__count--plain') +
           '<p class="inv__h">Deja una bendición</p><div class="inv__chips">' +
           ['Dios te bendiga', 'Felicidades', 'Con mucho cariño'].map(function (t) { return '<button type="button">' + t + '</button>'; }).join('') +
