@@ -455,3 +455,33 @@ em{font-style:italic;color:inherit}
 #hero-phone[data-theme=cumple] .inv__chips{justify-content:flex-start}
 .mini--cumple{--mrad:12px}
 .mini--cumple .mini__name{text-transform:none;font-size:2.1em}
+
+/* Páginas de evento */
+.ev-hero{min-height:0;padding:132px 0 84px}
+.ev-hero .hero2__visual::before{top:50%}
+.ev-hero .demo__phone{width:250px}
+.ev-hero .mini{font-size:15.5px}
+.ev-hero .hero__title{max-width:16ch}
+.mini--xv{--mbg:linear-gradient(180deg,#141c3f,#1d2858);--mink:#fff;--macc:#D4577A;--mcard:rgba(255,255,255,.08);--mline:rgba(255,255,255,.18);--mrad:10px;--mbtn:#fff}
+.mini--xv .mini__photo{width:7em;height:7em;margin:1.6em 0 .4em;border-radius:50%;border:2px solid var(--macc)}
+.mini--xv .mini__name{font-family:'Pinyon Script',cursive;font-size:2.9em;line-height:1}
+.packages--static{display:grid;gap:20px;max-width:1000px;margin:0 auto;align-items:stretch}
+.packages--2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px}
+.packages--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ev-all{text-align:center;margin-top:32px}
+.ev-all a,.ev-link{font-weight:600;border-bottom:1px solid var(--sand)}
+.ev-all a{color:var(--ivory)}
+.ev-others{margin-top:36px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.ev-link{color:var(--forest)}
+.ev-link i{color:var(--sand);margin-right:6px;font-size:.8em}
+.footer__events{margin-top:10px}
+@media(max-width:820px){
+  .ev-hero{padding:104px 0 56px}
+  .ev-hero .hero__title{max-width:14ch}
+  .packages--static,.packages--2,.packages--3{display:grid;grid-template-columns:1fr;max-width:460px;margin:0 auto;overflow:visible;padding:8px 0 0;scroll-snap-type:none}
+  .packages--static .pkg{flex:none;width:100%}
+  .ev-others{justify-content:center;text-align:center}
+}
+.event__link{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:100%;height:100%;padding:16px;text-align:center}
+.event:has(>.event__link){padding:0}
+.event:has(>.event__link):hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(47,58,51,.12)}
