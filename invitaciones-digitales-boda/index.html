@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;800&family=Pinyon+Script&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="../css/invitaciones.css?v=32" />
+  <link rel="stylesheet" href="../css/invitaciones.css?v=33" />
 </head>
 <body class="ev-page">
   <!-- Google Tag Manager (noscript) -->
@@ -136,35 +136,103 @@
     <div class="container">
       <div class="section-head section-head--light">
         <span class="label">Paquetes</span>
-        <h2 class="section-title">Paquetes para boda</h2>
+        <h2 class="section-title">Elige tu paquete</h2>
       </div>
-      <div class="packages packages--static packages--3">
+
+      <div class="packages packages--n3">
+
         <article class="pkg">
-          
           <h3 class="pkg__name">Clásica</h3>
           <p class="pkg__price">$1,990</p>
           <p class="pkg__desc">Con fotos y los detalles que tus invitados necesitan.</p>
-          <ul class="pkg__list"><li class="pkg__more">Todo lo del Esencial, más:</li><li>Padres y padrinos</li><li>Frase especial o versículo</li><li>Hasta 5 fotos</li><li>Link a mesa de regalos</li><li>2 rondas de cambios</li></ul>
+          <ul class="pkg__list">
+            <li class="pkg__more">Todo lo del Esencial, más:</li>
+            <li>Padres y padrinos</li>
+            <li>Frase especial o versículo</li>
+            <li>Hasta 5 fotos</li>
+            <li>Link a mesa de regalos</li>
+            <li>2 rondas de cambios</li>
+          </ul>
           <a href="https://wa.me/527229313202?text=Hola%2C%20me%20interesa%20el%20paquete%20Cl%C3%A1sica%20de%20invitaciones%20digitales%20de%20Moment0%20para%20boda.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn btn--forest btn--block" target="_blank" rel="noopener noreferrer">Quiero este paquete</a>
         </article>
+
         <article class="pkg pkg--featured">
           <span class="pkg__badge">La más elegida</span>
           <h3 class="pkg__name">Destello</h3>
           <p class="pkg__price">$2,990</p>
           <p class="pkg__desc">Para celebraciones con más detalle.</p>
-          <ul class="pkg__list"><li class="pkg__more">Todo lo de Clásica, más:</li><li>Hasta 15 fotos</li><li>Mesa de regalos o lluvia de sobres</li><li>Confirmación con formulario en la página</li><li>Agregar al calendario</li><li>Música de fondo</li><li>Código de vestimenta</li><li>Itinerario</li><li>Versión en inglés o bilingüe</li><li>Disponible 6 meses</li></ul>
+          <ul class="pkg__list">
+            <li class="pkg__more">Todo lo de Clásica, más:</li>
+            <li>Hasta 15 fotos</li>
+            <li>Mesa de regalos o lluvia de sobres</li>
+            <li>Confirmación con formulario en la página</li>
+            <li>Agregar al calendario</li>
+            <li>Música de fondo</li>
+            <li>Código de vestimenta</li>
+            <li>Itinerario</li>
+            <li>Versión en inglés o bilingüe</li>
+            <li>Disponible 6 meses</li>
+          </ul>
           <a href="https://wa.me/527229313202?text=Hola%2C%20me%20interesa%20el%20paquete%20Destello%20de%20invitaciones%20digitales%20de%20Moment0%20para%20boda.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn btn--forest btn--block" target="_blank" rel="noopener noreferrer">Quiero este paquete</a>
         </article>
+
         <article class="pkg">
-          
           <h3 class="pkg__name">Gran Momento</h3>
           <p class="pkg__price">$3,990</p>
           <p class="pkg__desc">Tu invitación, sin límites.</p>
-          <ul class="pkg__list"><li class="pkg__more">Todo lo de Destello, más:</li><li>Fotos ilimitadas y video</li><li>Pase por familia</li><li>Restricciones alimentarias en la confirmación</li><li>Lista de confirmados descargable</li><li>Save the date</li><li>Álbum para que tus invitados suban fotos</li><li>3 rondas de cambios</li></ul>
+          <ul class="pkg__list">
+            <li class="pkg__more">Todo lo de Destello, más:</li>
+            <li>Fotos ilimitadas y video</li>
+            <li>Pase por familia</li>
+            <li>Restricciones alimentarias en la confirmación</li>
+            <li>Lista de confirmados descargable</li>
+            <li>Hospedaje, maquillaje, peinado y transporte para foráneos</li>
+            <li>Save the date</li>
+            <li>Álbum para que tus invitados suban fotos</li>
+            <li>3 rondas de cambios</li>
+          </ul>
           <a href="https://wa.me/527229313202?text=Hola%2C%20me%20interesa%20el%20paquete%20Gran%20Momento%20de%20invitaciones%20digitales%20de%20Moment0%20para%20boda.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn btn--forest btn--block" target="_blank" rel="noopener noreferrer">Quiero este paquete</a>
         </article>
       </div>
-      <p class="ev-all"><a href="../#paquetes">Ver todos los paquetes y la comparativa →</a></p>
+
+      <div class="pkg-dots" id="pkg-dots" aria-label="Paquetes"></div>
+
+      <div class="compare-toggle">
+        <button class="btn btn--ivory-outline" id="compare-btn" aria-expanded="false" aria-controls="compare">Ver comparativa completa</button>
+      </div>
+
+      <div class="compare" id="compare" hidden>
+        <div class="compare__scroll">
+          <table>
+            <thead>
+              <tr><th scope="col"><span class="sr-only">Característica</span></th><th scope="col">Clásica</th><th scope="col" class="is-featured">Destello</th><th scope="col">Gran Momento</th></tr>
+            </thead>
+            <tbody>
+              <tr class="row-price"><th scope="row">Precio</th><td>$1,990</td><td class="is-featured">$2,990</td><td>$3,990</td></tr>
+              <tr><th scope="row">Nombres, evento, fecha y hora</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Diseño con la temática que elijas</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Cuenta regresiva</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Cómo llegar</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Padres y padrinos</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Frase especial o versículo</th><td>✓</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Fotos</th><td>Hasta 5</td><td class="is-featured">Hasta 15</td><td>Ilimitadas + video</td></tr>
+              <tr><th scope="row">Mesa de regalos</th><td>Link</td><td class="is-featured">Link o lluvia de sobres</td><td>Link o lluvia de sobres</td></tr>
+              <tr><th scope="row">Confirmación</th><td>WhatsApp</td><td class="is-featured">Formulario en la página</td><td>Formulario + restricciones alimentarias + lista descargable</td></tr>
+              <tr><th scope="row">Agregar al calendario</th><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Música de fondo</th><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Código de vestimenta</th><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Itinerario</th><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Versión en inglés o bilingüe</th><td class="no">—</td><td class="is-featured">✓</td><td>✓</td></tr>
+              <tr><th scope="row">Pase por familia</th><td class="no">—</td><td class="is-featured no">—</td><td>✓</td></tr>
+              <tr><th scope="row">Hospedaje, maquillaje, peinado y transporte para foráneos</th><td class="no">—</td><td class="is-featured no">—</td><td>✓</td></tr>
+              <tr><th scope="row">Save the date</th><td class="no">—</td><td class="is-featured no">—</td><td>✓</td></tr>
+              <tr><th scope="row">Álbum para que los invitados suban fotos</th><td class="no">—</td><td class="is-featured no">—</td><td>✓</td></tr>
+              <tr><th scope="row">Rondas de cambios</th><td>2</td><td class="is-featured">2</td><td>3</td></tr>
+              <tr><th scope="row">Disponible en web</th><td>3 meses</td><td class="is-featured">6 meses</td><td>6 meses</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -238,6 +306,7 @@
   <a class="wa-float" href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20boda%20de%20Moment0." target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 
   <script src="../js/legal.js?v=4"></script>
+  <script src="../js/paquetes.js?v=1"></script>
   <script src="../js/hero-phone.js?v=2"></script>
 </body>
 </html>
