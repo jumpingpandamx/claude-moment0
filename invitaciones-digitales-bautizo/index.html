@@ -36,9 +36,10 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;800&family=Pinyon+Script&display=swap" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="../css/invitaciones.css?v=35" />
+  <link rel="preload" as="image" href="../assets/demo/bautizo.jpg" fetchpriority="high" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..700&family=Inter:wght@400..800&family=Pinyon+Script&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..700&family=Inter:wght@400..800&family=Pinyon+Script&display=swap" /></noscript>
+  <link rel="stylesheet" href="../css/invitaciones.css?v=36" />
 </head>
 <body class="ev-page">
   <!-- Google Tag Manager (noscript) -->
@@ -89,10 +90,10 @@
       </div>
       <div class="hero2__visual">
         <div class="phone-wrap">
-          <div class="phone" id="hero-phone" data-start="bautizo" data-base="../">
+          <div class="phone" id="hero-phone" data-start="bautizo" data-base="../" data-theme="bautizo" style="--acc:#6F93B5">
             <div class="phone__notch"></div>
             <div class="phone__screen" id="inv-screen">
-              <div class="inv__body" id="inv-body"></div>
+              <div class="inv__body" id="inv-body" data-ssr="1"><div class="inv__arch" aria-hidden="true"><img fetchpriority="high" src="../assets/demo/bautizo.jpg" alt="" width="640" height="427" decoding="async"></div><p class="inv__kicker">Mi bautizo</p><p class="inv__names">Emma</p><p class="inv__date">Domingo 12 de abril · 1:00 pm</p><div class="inv__count inv__count--plain" aria-hidden="true"><div><b data-u="d">88</b><small>días</small></div><div><b data-u="h">01</b><small>horas</small></div><div><b data-u="m">30</b><small>min</small></div><div><b data-u="s" class="tick">10</b><small>seg</small></div></div><p class="inv__h">Deja una bendición</p><div class="inv__chips"><button type="button">Dios te bendiga</button><button type="button">Felicidades</button><button type="button">Con mucho cariño</button></div><p class="inv__sent" aria-live="polite"></p></div>
               <button type="button" class="inv__btn" id="inv-btn"><span class="inv__btn-text">Confirmar asistencia</span></button>
               <div class="env" aria-hidden="true"><span class="env__flap"></span><span class="env__seal">M0</span></div>
             </div>
@@ -306,8 +307,9 @@
 
   <a class="wa-float" href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20bautizo%20de%20Moment0." target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 
+  <script src="../js/track.js?v=1" defer></script>
   <script src="../js/legal.js?v=4"></script>
   <script src="../js/paquetes.js?v=1"></script>
-  <script src="../js/hero-phone.js?v=2"></script>
+  <script src="../js/hero-phone.js?v=3"></script>
 </body>
 </html>

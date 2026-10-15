@@ -143,10 +143,10 @@
       invBtn.setAttribute('aria-pressed', 'false');
       invBtn.querySelector('.inv__btn-text').textContent = 'Confirmar asistencia';
     }
-    function applyEvent(key) {
+    function applyEvent(key, first) {
       var ev = EVENTS[key];
       state.ev = key; state.guests = 1;
-      invBody.innerHTML = ev.html();
+      if (!(first && invBody.dataset.ssr)) invBody.innerHTML = ev.html();
       ev.bind(invBody, state);
       invEls = {}; invLast = {};
       invBody.querySelectorAll('[data-u]').forEach(function (el) { invEls[el.dataset.u] = el; });
@@ -156,7 +156,7 @@
       invTick(true);
       resetConfirm();
     }
-    applyEvent(START);
+    applyEvent(START, true);
     setInterval(function () { invTick(false); }, 1000);
     document.querySelectorAll('#evsw button').forEach(function (b) {
       b.addEventListener('click', function () {
@@ -177,6 +177,7 @@
       var on = invBtn.classList.toggle('is-confirmed');
       invBtn.querySelector('.inv__btn-text').textContent = on ? EVENTS[state.ev].ok(state) : 'Confirmar asistencia';
       invBtn.setAttribute('aria-pressed', on);
+      if (on) (window.dataLayer = window.dataLayer || []).push({ event: 'phone_confirm', event_type: state.ev, page_path: location.pathname });
       if (on && !reduce) {
         var colors = ['#9CAF88', '#C8A97E', '#2F3A33', getComputedStyle(invPhone).getPropertyValue('--acc').trim() || '#C8A97E'];
         for (var i = 0; i < 18; i++) {
