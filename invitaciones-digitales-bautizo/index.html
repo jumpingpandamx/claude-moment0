@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;800&family=Pinyon+Script&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="../css/invitaciones.css?v=31" />
+  <link rel="stylesheet" href="../css/invitaciones.css?v=32" />
 </head>
 <body class="ev-page">
   <!-- Google Tag Manager (noscript) -->
@@ -85,7 +85,17 @@
         <ul class="chips"><li>Desde $999</li><li>Padres y padrinos</li><li>Lista en 15 días hábiles</li></ul>
       </div>
       <div class="hero2__visual">
-        <div class="phone-wrap"><div class="demo__phone" aria-hidden="true"><span class="mini mini--bautizo"><span class="mini__photo" style="background-image:url(../assets/demo/bautizo.jpg)"></span><small class="mini__kicker">Mi bautizo</small><span class="mini__name">Emma</span><small class="mini__date">Domingo 12 de abril · 1 pm</small><span class="mini__count"><i><b>29</b><u>días</u></i><i><b>14</b><u>hrs</u></i><i><b>37</b><u>min</u></i></span><span class="mini__row">Cómo llegar</span><span class="mini__btn">Confirmar asistencia</span></span></div></div>
+        <div class="phone-wrap">
+          <div class="phone" id="hero-phone" data-start="bautizo" data-base="../">
+            <div class="phone__notch"></div>
+            <div class="phone__screen" id="inv-screen">
+              <div class="inv__body" id="inv-body"></div>
+              <button type="button" class="inv__btn" id="inv-btn"><span class="inv__btn-text">Confirmar asistencia</span></button>
+              <div class="env" aria-hidden="true"><span class="env__flap"></span><span class="env__seal">M0</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="evsw__label">Tócala y pruébala</p>
       </div>
     </div>
   </section>
@@ -227,6 +237,7 @@
 
   <a class="wa-float" href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20bautizo%20de%20Moment0." target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
 
-  <script src="../js/legal.js?v=3"></script>
+  <script src="../js/legal.js?v=4"></script>
+  <script src="../js/hero-phone.js?v=2"></script>
 </body>
 </html>
