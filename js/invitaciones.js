@@ -6,6 +6,22 @@
   /* Menú */
   var nav = document.getElementById('nav');
   var toggle = document.getElementById('nav-toggle');
+
+  /* Menú "Invitaciones" */
+  var dd = document.querySelector('.nav__dd');
+  if (dd) {
+    var ddb = dd.querySelector('.nav__ddbtn');
+    ddb.addEventListener('click', function (e) {
+      e.stopPropagation();
+      ddb.setAttribute('aria-expanded', dd.classList.toggle('open'));
+    });
+    document.addEventListener('click', function (e) {
+      if (!dd.contains(e.target)) { dd.classList.remove('open'); ddb.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { dd.classList.remove('open'); ddb.setAttribute('aria-expanded', 'false'); }
+    });
+  }
   function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 24); }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();

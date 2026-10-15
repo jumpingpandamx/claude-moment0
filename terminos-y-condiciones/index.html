@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="../css/invitaciones.css?v=28" />
+  <link rel="stylesheet" href="../css/invitaciones.css?v=29" />
 </head>
 <body class="legal-page">
   <!-- Google Tag Manager (noscript) -->
@@ -34,7 +34,17 @@
       </a>
       <nav class="nav__links" id="nav-links" aria-label="Principal">
         <a href="../#paquetes">Paquetes</a>
-        <a href="../#eventos">Eventos</a>
+        <div class="nav__dd">
+          <button type="button" class="nav__ddbtn" aria-expanded="false" aria-haspopup="true">Invitaciones <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+          <ul class="nav__menu">
+            <li><a href="../invitaciones-digitales-cumpleanos-infantiles/">Cumpleaños infantiles</a></li>
+            <li><a href="../invitaciones-digitales-xv-anos/">XV años</a></li>
+            <li><a href="../invitaciones-digitales-boda/">Boda</a></li>
+            <li><a href="../invitaciones-digitales-primera-comunion/">Primera comunión</a></li>
+            <li><a href="../invitaciones-digitales-bautizo/">Bautizo</a></li>
+            <li><a class="nav__all" href="../#eventos">Ver todos los eventos →</a></li>
+          </ul>
+        </div>
         <a href="../#demos">Demos</a>
         <a href="../#preguntas">Preguntas</a>
         <a href="https://wa.me/527229313202?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20invitaci%C3%B3n%20digital%20de%20Moment0." class="btn btn--forest btn--sm" target="_blank" rel="noopener noreferrer">Cotiza por WhatsApp</a>
@@ -212,6 +222,6 @@
     </div>
   </footer>
 
-  <script src="../js/legal.js?v=1"></script>
+  <script src="../js/legal.js?v=2"></script>
 </body>
 </html>
