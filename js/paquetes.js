@@ -1,5 +1,6 @@
 /* Paquetes (home y páginas de evento): slider en móvil, comparativa y tabla */
 (function () {
+  var EN = document.documentElement.lang === 'en';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   /* Sliders en móvil (paquetes y demos): puntos de navegación */
   window.initSlider = function initSlider(track, dots, itemSel, labelFn, startIndex) {
@@ -33,7 +34,7 @@
     sync();
   }
   initSlider(document.querySelector('.packages'), document.getElementById('pkg-dots'), '.pkg',
-    function (c) { return 'Ver paquete ' + c.querySelector('.pkg__name').textContent; });
+    function (c) { return (EN ? 'View package ' : 'Ver paquete ') + c.querySelector('.pkg__name').textContent; });
 
   /* Comparativa en móvil: un paquete a la vez, armado desde la misma tabla */
   (function () {
@@ -67,9 +68,9 @@
         if (r.price) return;
         var v = r.vals[i], no = v === '—', ok = v === '✓';
         html += '<li class="' + (no ? 'is-no' : '') + '"><span>' + r.label + '</span><b>' +
-          (ok ? '<i class="fa-solid fa-check"></i><span class="sr-only">Incluido</span>' : no ? '<span aria-hidden="true">—</span><span class="sr-only">No incluido</span>' : v) + '</b></li>';
+          (ok ? '<i class="fa-solid fa-check"></i><span class="sr-only">' + (EN ? 'Included' : 'Incluido') + '</span>' : no ? '<span aria-hidden="true">—</span><span class="sr-only">' + (EN ? 'Not included' : 'No incluido') + '</span>' : v) + '</b></li>';
       });
-      html += '</ul><a class="btn btn--forest btn--block" target="_blank" rel="noopener noreferrer" href="' + ctas[i] + '">Quiero este paquete</a>';
+      html += '</ul><a class="btn btn--forest btn--block" target="_blank" rel="noopener noreferrer" href="' + ctas[i] + '">' + (EN ? 'I want this package' : 'Quiero este paquete') + '</a>';
       panel.innerHTML = html;
     }
     names.forEach(function (n, i) {
@@ -93,7 +94,7 @@
     var show = table.hidden;
     table.hidden = !show;
     btn.setAttribute('aria-expanded', show);
-    btn.textContent = show ? 'Ocultar comparativa' : 'Ver comparativa completa';
+    btn.textContent = show ? (EN ? 'Hide comparison' : 'Ocultar comparativa') : (EN ? 'See full comparison' : 'Ver comparativa completa');
     if (show) table.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
   });
 

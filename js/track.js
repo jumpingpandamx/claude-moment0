@@ -1,6 +1,7 @@
 /* Eventos para Google Tag Manager (dataLayer): clics en WhatsApp, demo en vivo y comparativa */
 (function () {
   var dl = window.dataLayer = window.dataLayer || [];
+  var lang = document.documentElement.lang === 'en' ? 'en' : 'es';
   function where(a) {
     if (a.classList.contains('wa-float')) return 'boton_flotante';
     if (a.closest('.nav')) return 'menu';
@@ -24,13 +25,13 @@
     if (a) {
       var h = a.getAttribute('href');
       if (h.indexOf('wa.me') > -1) {
-        dl.push({ event: 'whatsapp_click', click_location: where(a), package_name: pkg(a), page_path: location.pathname, link_text: a.textContent.trim().slice(0, 40) });
+        dl.push({ event: 'whatsapp_click', click_location: where(a), package_name: pkg(a), page_path: location.pathname, language: lang, link_text: a.textContent.trim().slice(0, 40) });
       } else if (h.indexOf('renata15.com') > -1) {
-        dl.push({ event: 'demo_click', demo_name: 'Destello', page_path: location.pathname });
+        dl.push({ event: 'demo_click', demo_name: 'Destello', page_path: location.pathname, language: lang });
       }
     }
     if (e.target.closest && e.target.closest('#compare-btn')) {
-      dl.push({ event: 'compare_toggle', page_path: location.pathname });
+      dl.push({ event: 'compare_toggle', page_path: location.pathname, language: lang });
     }
   });
 })();
