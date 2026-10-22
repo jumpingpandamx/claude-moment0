@@ -1,50 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://moment0.mx/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/"/>
     <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://moment0.mx/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/"/>
+                <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://moment0.mx/invitaciones-digitales-cumpleanos-infantiles/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-cumpleanos-infantiles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-kids-birthday/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-cumpleanos-infantiles/"/>
     <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moment0.mx/en/digital-invitations-kids-birthday/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-cumpleanos-infantiles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-kids-birthday/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-cumpleanos-infantiles/"/>
+                <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://moment0.mx/invitaciones-digitales-xv-anos/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-xv-anos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-quinceanera/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-xv-anos/"/>
     <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moment0.mx/en/digital-invitations-quinceanera/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-xv-anos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-quinceanera/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-xv-anos/"/>
+                <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://moment0.mx/invitaciones-digitales-boda/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-boda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-wedding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-boda/"/>
     <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moment0.mx/en/digital-invitations-wedding/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-boda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-wedding/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-boda/"/>
+                <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://moment0.mx/invitaciones-digitales-primera-comunion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-primera-comunion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-first-communion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-primera-comunion/"/>
     <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moment0.mx/en/digital-invitations-first-communion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-primera-comunion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-first-communion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-primera-comunion/"/>
+                <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://moment0.mx/invitaciones-digitales-bautizo/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-bautizo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-baptism/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-bautizo/"/>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://moment0.mx/en/digital-invitations-baptism/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/invitaciones-digitales-bautizo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/digital-invitations-baptism/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/invitaciones-digitales-bautizo/"/>
+                <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://moment0.mx/aviso-de-privacidad/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/aviso-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/aviso-de-privacidad/"/>
     <lastmod>2026-10-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://moment0.mx/en/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/aviso-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/aviso-de-privacidad/"/>
+                <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://moment0.mx/terminos-y-condiciones/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/terminos-y-condiciones/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/terms-and-conditions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/terminos-y-condiciones/"/>
     <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://moment0.mx/en/terms-and-conditions/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moment0.mx/terminos-y-condiciones/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moment0.mx/en/terms-and-conditions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moment0.mx/terminos-y-condiciones/"/>
+                <lastmod>2026-10-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
